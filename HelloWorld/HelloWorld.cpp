@@ -1,6 +1,11 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main(){
-    cout << "\n\t\t\t\tHello World!\n" << endl;
+    string name;
+    
+    cout << "What is your name? "<< endl; cin >> name;
+    
+    cout << "\n\t\t\t\tHello " << name << "!\n" << endl;
 }
