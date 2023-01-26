@@ -6,20 +6,16 @@ bool ComprobarNegativo(float num);
 
 int main(){
     float num = 0;
-    cout << "Dime un número: "; cin >> num;
-    if (ComprobarNegativo(num)){
-        cout << "El número introducido es negativo" << endl;
-        
-        return 6;
+    
+    while (ComprobarNegativo(num)){
+        cout << "Dime un número: "; cin >> num;
     }
     
     float suma = 0;
     
-    
     suma = Suma(num, suma);
     
     cout << "\nLa suma entre 1 y " << num << " es: " << suma << endl;
-    
 }
 
 float Suma(float num, float suma){
