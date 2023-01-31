@@ -7,13 +7,7 @@ int main(){
     
     while (a <= 0) {cout << "Dime un número >=1: "; cin >> a;}
         
-    while (b <= 0) {cout << "\nDime otro número >=1: "; cin >> b;}
-    
-    if (b < a){
-        float aux = a;
-        a = b;
-        b = aux;
-    }
+    while (b < a) {cout << "\nDime otro número >=1: "; cin >> b;}
     
     for (int i = a; i <= b; i++){
         sum += i;
