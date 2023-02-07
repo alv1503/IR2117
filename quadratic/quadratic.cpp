@@ -18,6 +18,10 @@ int main(){
         cout << "No hay solución" << endl;
     }
     
+    else if(discriminant == 0){
+        x1 = (-b)/(2*a);
+        
+    }
     else{
         x1 = (-b + sqrt(discriminant))/(2*a);
         x2 = (-b - sqrt(discriminant))/(2*a);
