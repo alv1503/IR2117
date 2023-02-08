@@ -20,8 +20,9 @@ int main(){
     
     else if(discriminant == 0){
         x1 = (-b)/(2*a);
-        
+        cout << "La solución de la equación " << a << "x² + " << b << "x + " << c << " es:\n\tx1 = " << x1 << endl;
     }
+    
     else{
         x1 = (-b + sqrt(discriminant))/(2*a);
         x2 = (-b - sqrt(discriminant))/(2*a);
