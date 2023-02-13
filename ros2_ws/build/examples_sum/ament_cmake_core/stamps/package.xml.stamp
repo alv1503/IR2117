@@ -5,11 +5,11 @@
   <version>0.0.1</version>
   <description>Examples of sum of numbers</description>
 
-  <maintainer email="al415493@uji.es">Alvaro Arbona</maintainer>
+  <maintainer email="al415493@uji.es">Álvaro Arbona</maintainer>
 
   <license>Apache License 2.0</license>
 
-  <author email="al415493@uji.es">Alvaro Arbona</author>
+  <author email="al415493@uji.es">Álvaro Arbona</author>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 

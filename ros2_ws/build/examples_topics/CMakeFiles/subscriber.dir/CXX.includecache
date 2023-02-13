@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/usuario/Documentos/GitHub/IR2117/ros2_ws/src/examples/topics/subscriber.cpp
+/home/alvaro/Documents/GitHub/IR2117/ros2_ws/src/examples/topics/subscriber.cpp
 rclcpp/rclcpp.hpp
-/home/usuario/Documentos/GitHub/IR2117/ros2_ws/src/examples/topics/rclcpp/rclcpp.hpp
+/home/alvaro/Documents/GitHub/IR2117/ros2_ws/src/examples/topics/rclcpp/rclcpp.hpp
 std_msgs/msg/string.hpp
-/home/usuario/Documentos/GitHub/IR2117/ros2_ws/src/examples/topics/std_msgs/msg/string.hpp
+/home/alvaro/Documents/GitHub/IR2117/ros2_ws/src/examples/topics/std_msgs/msg/string.hpp
 iostream
 -
 

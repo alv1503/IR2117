@@ -1,6 +1,6 @@
 set(_AMENT_PACKAGE_NAME "examples_sum")
 set(examples_sum_VERSION "0.0.1")
-set(examples_sum_MAINTAINER "Alvaro Arbona <al415493@uji.es>")
+set(examples_sum_MAINTAINER "Álvaro Arbona <al415493@uji.es>")
 set(examples_sum_BUILD_DEPENDS "rclcpp" "std_msgs")
 set(examples_sum_BUILDTOOL_DEPENDS "ament_cmake")
 set(examples_sum_BUILD_EXPORT_DEPENDS )

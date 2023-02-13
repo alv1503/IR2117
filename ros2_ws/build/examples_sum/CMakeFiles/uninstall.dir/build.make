@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/usuario/Documentos/GitHub/IR2117/ros2_ws/src/examples/sum
+CMAKE_SOURCE_DIR = /home/alvaro/Documents/GitHub/IR2117/ros2_ws/src/examples/sum
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/usuario/Documentos/GitHub/IR2117/ros2_ws/build/examples_sum
+CMAKE_BINARY_DIR = /home/alvaro/Documents/GitHub/IR2117/ros2_ws/build/examples_sum
 
 # Utility rule file for uninstall.
 
@@ -67,6 +67,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/usuario/Documentos/GitHub/IR2117/ros2_ws/build/examples_sum && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/usuario/Documentos/GitHub/IR2117/ros2_ws/src/examples/sum /home/usuario/Documentos/GitHub/IR2117/ros2_ws/src/examples/sum /home/usuario/Documentos/GitHub/IR2117/ros2_ws/build/examples_sum /home/usuario/Documentos/GitHub/IR2117/ros2_ws/build/examples_sum /home/usuario/Documentos/GitHub/IR2117/ros2_ws/build/examples_sum/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alvaro/Documents/GitHub/IR2117/ros2_ws/build/examples_sum && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alvaro/Documents/GitHub/IR2117/ros2_ws/src/examples/sum /home/alvaro/Documents/GitHub/IR2117/ros2_ws/src/examples/sum /home/alvaro/Documents/GitHub/IR2117/ros2_ws/build/examples_sum /home/alvaro/Documents/GitHub/IR2117/ros2_ws/build/examples_sum /home/alvaro/Documents/GitHub/IR2117/ros2_ws/build/examples_sum/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 
