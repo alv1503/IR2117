@@ -19,8 +19,10 @@ int main(int argc, char** argv){
     
     sort(numbers.begin(), numbers.end());
     
+    int middle = numbers.size()/2;
+    
     if (numbers.size() % 2 == 0) {
-        cout << "Even" << endl;
+        median = numbers[middle];
     }
     
     else{
