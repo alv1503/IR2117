@@ -8,7 +8,7 @@ int main(){
     
     cout << "Dime un número: "; cin >> number;
     
-    while (number > 0){
+    while (!cin.eof()){
         cout << "Dime un numero: "; cin >> number;
         sum += number;
         n++;
