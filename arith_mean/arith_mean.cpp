@@ -6,10 +6,10 @@ int main(){
     int number, n;
     double sum, mean;
     
-    cout << "Dime un número: "; cin >> number;
+    cin >> number;
     
-    while (!cin.eof()){
-        cout << "Dime un numero: "; cin >> number;
+    while (not cin.eof()){
+        cin >> number;
         sum += number;
         n++;
     }
