@@ -14,15 +14,18 @@ int main(int argc, char** argv){
     
     while (not cin.eof()){
         numbers.push_back(number);
-        n++;
         cin >> number;
     }
     
     sort(numbers.begin(), numbers.end());
     
-    for (int i = 0; i < numbers.size(); i++){
-        cout << numbers[i] << endl;
+    if (numbers.size() % 2 == 0) {
+        cout << "Even" << endl;
     }
+    
+    else{
+        cout << "Odd" << endl;
+    }    
     
     cout << "Median: " << median << endl;
     
