@@ -10,9 +10,9 @@ int main(int argc, char** argv){
         s += atoi(argv[i]);
     }
     
-    m = s/n
+    m = s/n;
     
     cout << "Arithmetic mean: " << m << endl;
     
-    return 0
+    return 0;
 }
