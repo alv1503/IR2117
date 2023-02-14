@@ -2,17 +2,21 @@
 
 using namespace std;
 
-int main(int argc, char** argv){
-    double m = 0, s = 0;
-    int n = argc - 1;
+int main(){
+    int number, n;
+    double sum, mean;
     
-    for (int i = 1; i <= n; i++){
-        s += atoi(argv[i]);
+    cout << "Dime un número: "; cin >> number;
+    
+    while (number > 0){
+        cout << "Dime un numero: "; cin >> number;
+        sum += number;
+        n++;
     }
     
-    m = s/n;
+    mean = sum/n;
     
-    cout << "Arithmetic mean: " << m << endl;
+    cout << "Arithmetic mean: " << mean << endl;
     
     return 0;
 }
