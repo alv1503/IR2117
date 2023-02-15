@@ -23,6 +23,11 @@ int main(int argc, char** argv){
                 n++;
             }
         }
+        
+        if (n > max){
+            max = n;
+            mode = numbers[i];
+        }
     }
 
     cout << "Mode: " << mode << endl;
