@@ -22,11 +22,11 @@ int main(int argc, char** argv){
     int middle = numbers.size()/2;
     
     if (numbers.size() % 2 == 0) {
-        median = numbers[middle];
+        median = double(numbers[middle] + numbers[middle-1])/2;
     }
     
     else{
-        cout << "Odd" << endl;
+        median = numbers[middle];
     }    
     
     cout << "Median: " << median << endl;
