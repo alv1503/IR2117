@@ -4,7 +4,7 @@
 using namespace std;
 
 int main(int argc, char** argv){
-    int number, n = 0;
+    int number, n;
     double max = 0, mode;
     
     vector<int> numbers;
@@ -17,13 +17,15 @@ int main(int argc, char** argv){
     }
     
     for (int i = 0; i < numbers.size(); i++){
-        if (numbers[0] == numbers[i]){
-            n++;
+        n = 0;
+        for (int j = 0; j < numbers.size(); j++){
+            if (numbers[i] == numbers[j]){
+                n++;
+            }
         }
     }
-    
-    cout << numbers[0] << " aparece " << n << " veces" << endl;  
-    //cout << "Mode: " << mean << endl;
+
+    cout << "Mode: " << mode << endl;
     
     return 0;
 }
