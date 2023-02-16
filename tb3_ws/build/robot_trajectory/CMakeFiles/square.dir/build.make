@@ -80,17 +80,16 @@ square_EXTERNAL_OBJECTS =
 square: CMakeFiles/square.dir/src/square.cpp.o
 square: CMakeFiles/square.dir/build.make
 square: /opt/ros/foxy/lib/librclcpp.so
+square: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_introspection_c.so
+square: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_c.so
+square: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_introspection_cpp.so
+square: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
 square: /opt/ros/foxy/lib/liblibstatistics_collector.so
 square: /opt/ros/foxy/lib/liblibstatistics_collector_test_msgs__rosidl_typesupport_introspection_c.so
 square: /opt/ros/foxy/lib/liblibstatistics_collector_test_msgs__rosidl_generator_c.so
 square: /opt/ros/foxy/lib/liblibstatistics_collector_test_msgs__rosidl_typesupport_c.so
 square: /opt/ros/foxy/lib/liblibstatistics_collector_test_msgs__rosidl_typesupport_introspection_cpp.so
 square: /opt/ros/foxy/lib/liblibstatistics_collector_test_msgs__rosidl_typesupport_cpp.so
-square: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_introspection_c.so
-square: /opt/ros/foxy/lib/libstd_msgs__rosidl_generator_c.so
-square: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_c.so
-square: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_introspection_cpp.so
-square: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_cpp.so
 square: /opt/ros/foxy/lib/librcl.so
 square: /opt/ros/foxy/lib/librcl_interfaces__rosidl_typesupport_introspection_c.so
 square: /opt/ros/foxy/lib/librcl_interfaces__rosidl_generator_c.so
@@ -113,6 +112,13 @@ square: /opt/ros/foxy/lib/libstatistics_msgs__rosidl_generator_c.so
 square: /opt/ros/foxy/lib/libstatistics_msgs__rosidl_typesupport_c.so
 square: /opt/ros/foxy/lib/libstatistics_msgs__rosidl_typesupport_introspection_cpp.so
 square: /opt/ros/foxy/lib/libstatistics_msgs__rosidl_typesupport_cpp.so
+square: /opt/ros/foxy/lib/libtracetools.so
+square: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_generator_c.so
+square: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_introspection_c.so
+square: /opt/ros/foxy/lib/libstd_msgs__rosidl_generator_c.so
+square: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_c.so
+square: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_introspection_cpp.so
+square: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_cpp.so
 square: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_c.so
 square: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_generator_c.so
 square: /opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_c.so
@@ -125,7 +131,6 @@ square: /opt/ros/foxy/lib/librosidl_typesupport_c.so
 square: /opt/ros/foxy/lib/librcpputils.so
 square: /opt/ros/foxy/lib/librosidl_runtime_c.so
 square: /opt/ros/foxy/lib/librcutils.so
-square: /opt/ros/foxy/lib/libtracetools.so
 square: CMakeFiles/square.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable square"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/square.dir/link.txt --verbose=$(VERBOSE)

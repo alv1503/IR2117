@@ -18,13 +18,13 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(std_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
 add_executable(square src/square.cpp)
-ament_target_dependencies(square rclcpp std_msgs)
+ament_target_dependencies(square rclcpp geometry_msgs)
 
 install(TARGETS
   square
