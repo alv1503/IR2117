@@ -1,0 +1,7 @@
+[0.011s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory -DCMAKE_INSTALL_PREFIX=/home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory
+[0.031s] CMake Error at CMakeLists.txt:29:
+[0.031s]   Parse error.  Function missing ending ")".  End of file reached.
+[0.031s] 
+[0.031s] 
+[0.031s] -- Configuring incomplete, errors occurred!
+[0.034s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory' returned '1': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory -DCMAKE_INSTALL_PREFIX=/home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory

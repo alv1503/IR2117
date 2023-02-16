@@ -1,0 +1,10 @@
+/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles/install/local.dir
+/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles/install.dir
+/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles/list_install_components.dir
+/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles/rebuild_cache.dir
+/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles/edit_cache.dir
+/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles/test.dir
+/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles/install/strip.dir
+/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles/publisher.dir
+/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles/robot_trajectory_uninstall.dir
+/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles/uninstall.dir
