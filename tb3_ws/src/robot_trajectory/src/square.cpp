@@ -23,7 +23,18 @@ int main(int argc, char * argv[])
       loop_rate.sleep();
 }
   
+  i = 0, n = 1570;
+  while (rclcpp::ok() && (i<n)){
+      i++;
+      message.linear.x = 0.0;
+      message.angular.z = 0.1;
+      publisher->publish(message);
+      rclcpp::spin_some(node);
+      loop_rate.sleep();
+}
+  
   message.linear.x = 0.0;
+  message.angular.z = 0.0;
   publisher->publish(message);
   
   rclcpp::shutdown();
