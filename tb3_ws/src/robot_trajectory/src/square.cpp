@@ -13,22 +13,22 @@ int main(int argc, char * argv[])
   rclcpp::WallRate loop_rate(10ms);
   
   for (int j = 0; j < 4; j++){
-    int i = 0, n = 1000;
+    int i = 0, n = 750;
   
     while (rclcpp::ok() && (i<n)){
         i++;
-        message.linear.x = 0.1;
+        message.linear.x = 0.15;
         message.angular.z = 0.0;
         publisher->publish(message);
         rclcpp::spin_some(node);
         loop_rate.sleep();
     }
     
-    i = 0, n = 1570;
+    i = 0, n = 170;
     while (rclcpp::ok() && (i<n)){
         i++;
         message.linear.x = 0.0;
-        message.angular.z = 0.1;
+        message.angular.z = 1;
         publisher->publish(message);
         rclcpp::spin_some(node);
         loop_rate.sleep();
