@@ -1,0 +1,17 @@
+[0.011s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
+[0.040s] [35m[1mScanning dependencies of target square[0m
+[0.057s] [ 50%] [32mBuilding CXX object CMakeFiles/square.dir/src/square.cpp.o[0m
+[0.851s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[0.851s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square.cpp:20:10:[m[K [01;31m[Kerror: [m[Kredeclaration of ‘[01m[Kdouble angular_speed[m[K’
+[0.851s]    20 |   double [01;31m[Kangular_speed[m[K = node->get_parameter("square_length").get_parameter_value().get<double>();
+[0.851s]       |          [01;31m[K^~~~~~~~~~~~~[m[K
+[0.852s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square.cpp:19:10:[m[K [01;36m[Knote: [m[K‘[01m[Kdouble angular_speed[m[K’ previously declared here
+[0.852s]    19 |   double [01;36m[Kangular_speed[m[K = node->get_parameter("angular_speed").get_parameter_value().get<double>();
+[0.852s]       |          [01;36m[K^~~~~~~~~~~~~[m[K
+[0.853s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square.cpp:24:32:[m[K [01;31m[Kerror: [m[K‘[01m[Ksquare_length[m[K’ was not declared in this scope
+[0.853s]    24 |     double linear_iterations = [01;31m[Ksquare_length[m[K / (0.01 * linear_speed);
+[0.853s]       |                                [01;31m[K^~~~~~~~~~~~~[m[K
+[1.409s] make[2]: *** [CMakeFiles/square.dir/build.make:63: CMakeFiles/square.dir/src/square.cpp.o] Error 1
+[1.410s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/square.dir/all] Error 2
+[1.410s] make: *** [Makefile:141: all] Error 2
+[1.413s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
