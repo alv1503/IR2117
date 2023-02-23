@@ -1,0 +1,13 @@
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square.cpp:23:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kn[m[K’ was not declared in this scope
+   23 |     while (rclcpp::ok() && (i<[01;31m[Kn[m[K)){
+      |                               [01;31m[K^[m[K
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square.cpp:32:12:[m[K [01;31m[Kerror: [m[K‘[01m[Kn[m[K’ was not declared in this scope
+   32 |     i = 0, [01;31m[Kn[m[K = 1570;
+      |            [01;31m[K^[m[K
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square.cpp:21:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Klinear_iterations[m[K’ [[01;35m[K-Wunused-variable[m[K]
+   21 |     double [01;35m[Klinear_iterations[m[K = 1 / (0.1 * linear_speed);
+      |            [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/square.dir/build.make:63: CMakeFiles/square.dir/src/square.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/square.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

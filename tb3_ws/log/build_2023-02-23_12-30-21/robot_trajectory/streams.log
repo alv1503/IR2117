@@ -1,0 +1,14 @@
+[0.011s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
+[0.040s] [35m[1mScanning dependencies of target square[0m
+[0.055s] [ 50%] [32mBuilding CXX object CMakeFiles/square.dir/src/square.cpp.o[0m
+[0.856s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[0.856s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square.cpp:32:9:[m[K [01;31m[Kerror: [m[Kredeclaration of ‘[01m[Kint i[m[K’
+[0.856s]    32 |     int [01;31m[Ki[m[K = 0, n = 1570;
+[0.856s]       |         [01;31m[K^[m[K
+[0.856s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square.cpp:20:9:[m[K [01;36m[Knote: [m[K‘[01m[Kint i[m[K’ previously declared here
+[0.856s]    20 |     int [01;36m[Ki[m[K = 0;
+[0.856s]       |         [01;36m[K^[m[K
+[1.400s] make[2]: *** [CMakeFiles/square.dir/build.make:63: CMakeFiles/square.dir/src/square.cpp.o] Error 1
+[1.400s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/square.dir/all] Error 2
+[1.400s] make: *** [Makefile:141: all] Error 2
+[1.403s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
