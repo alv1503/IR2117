@@ -14,14 +14,14 @@ int main(int argc, char * argv[])
   geometry_msgs::msg::Twist message;
   rclcpp::WallRate loop_rate(10ms);
   
-  double speed = node ->get_parameter("linear_speed").get_parameter_value().get<double>();
-  double speed = node ->get_parameter("angular_speed").get_parameter_value().get<double>();
+  double linear_speed = node->get_parameter("linear_speed").get_parameter_value().get<double>();
+  double angular_speed = node->get_parameter("angular_speed").get_parameter_value().get<double>();
   for (int j = 0; j < 4; j++){
     int i = 0, n = 1000;
   
     while (rclcpp::ok() && (i<n)){
         i++;
-        message.linear.x = speed;
+        message.linear.x = linear_speed;
         message.angular.z = 0.0;
         publisher->publish(message);
         rclcpp::spin_some(node);
@@ -32,7 +32,7 @@ int main(int argc, char * argv[])
     while (rclcpp::ok() && (i<n)){
         i++;
         message.linear.x = 0.0;
-        message.angular.z = 0.1;
+        message.angular.z = angular_speed;
         publisher->publish(message);
         rclcpp::spin_some(node);
         loop_rate.sleep();
