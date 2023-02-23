@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 /home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square.cpp
+cmath
+-
 chrono
 -
 rclcpp/rclcpp.hpp
