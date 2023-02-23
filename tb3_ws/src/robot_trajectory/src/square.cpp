@@ -20,7 +20,7 @@ int main(int argc, char * argv[])
   for (int j = 0; j < 4; j++){
     int i = 0;
     double linear_iterations = 1 / (0.01 * linear_speed);
-    std::cout << "iterations: " << linear_iterations << std::endl;
+
     while (rclcpp::ok() && (i<linear_iterations)){
         i++;
         message.linear.x = linear_speed;
@@ -31,8 +31,9 @@ int main(int argc, char * argv[])
     }
     
     i = 0;
-    int n = 1570;
-    while (rclcpp::ok() && (i<n)){
+    double t = 1.57/angular_speed;
+    double angular_iterations = t/0.01;
+    while (rclcpp::ok() && (i<angular_iterations)){
         i++;
         message.linear.x = 0.0;
         message.angular.z = angular_speed;
