@@ -3,9 +3,14 @@
 
 int main(){
     int mode, n, max = 0, number;
-    Eigen::VectorXd v(7);
+    Eigen::VectorXd v(0);
     
-    v << 1, 2, 2, 6, 4, 2, 9;
+    std::cin >> number;
+    while (not std::cin.eof()){
+        v.conservativeResize(v.size() + 1);
+        v(v.size() - 1) = number;
+        std::cin >> number;
+    }
     
     for (int i = 0; i < v.size(); i++){
         n = 0;
