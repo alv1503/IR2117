@@ -13,6 +13,16 @@ int main(){
     
     std::sort(v.data(), v.data() + v.size());
     
+    int middle = v.size()/2;
+    
+    if (v.size() % 2 != 0){
+        median = v[middle];
+    }
+    
+    else{
+        median = double(v[middle] + v[middle - 1])/2;
+    }
+    
     std::cout << "La mediana es: " << median << std::endl;
     
     return 0;
