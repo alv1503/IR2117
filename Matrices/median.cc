@@ -2,14 +2,17 @@
 #include <Eigen/Dense>
 #include <algorithm>
 
-int main(){
+int main(int argc, char** argv){
     double median;
+    int number;
+    Eigen::VectorXd v(0);
     
-    Eigen::VectorXd v(4);
-    v << 4, 7, 1, 12;
-    
-    //Eigen::VectorXd v(7);
-    //v << 5, 2, 4, 3, 7, 8, 1;
+    std::cin >> number;
+    while (not std::cin.eof()){
+        v.conservativeResize(v.size() + 1);
+        v(v.size() - 1) = number;
+        std::cin >> number;
+    }
     
     std::sort(v.data(), v.data() + v.size());
     
