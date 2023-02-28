@@ -51,5 +51,16 @@ int main(){
         } 
     }
     
+    int sumMaxDiag = 0;
+    int diag_prin = 0;
+    int diag_sec = 0;
+    int i = 0;
+    int j = 0;
+    while(i < cols){
+        diag_prin += m(i,j);
+        i++;
+        j++;
+    }
+    
     std::cout << "La suma maxima es: " << sum_max << std::endl;
 }
