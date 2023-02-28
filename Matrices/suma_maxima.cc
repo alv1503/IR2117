@@ -52,15 +52,35 @@ int main(){
     }
     
     int sumMaxDiag = 0;
+    
     int diag_prin = 0;
-    int diag_sec = 0;
     int i = 0;
     int j = 0;
+    
     while(i < cols){
         diag_prin += m(i,j);
         i++;
         j++;
     }
     
+    int diag_sec = 0;
+    i = cols - 1;
+    j = 0;
+    
+    while(i >= 0){
+        diag_sec += m(i, j);
+        i--;
+        j++;
+    }
+    
+    if (diag_prin > diag_sec){
+        sumMaxDiag = diag_prin;
+    }
+    
+    else{
+        sumMaxDiag = diag_sec;
+    }
+    
+    std::cout << sumMaxRow << "\n" << sumMaxCol << "\n" << sumMaxDiag << std::endl;
     std::cout << "La suma maxima es: " << sum_max << std::endl;
 }
