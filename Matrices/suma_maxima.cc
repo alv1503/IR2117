@@ -4,7 +4,7 @@
 using Eigen::MatrixXd;
 
 int main(){
-    int rows, cols, sum_max = 0,sum_cols = 0, sum_diagonal = 0;
+    int rows, cols, sum_max = 0, sum_diagonal = 0;
     
     std::cout << "Columnas: "; std::cin >> cols;
     std::cout << "Filas: "; std::cin >> rows;
@@ -32,11 +32,23 @@ int main(){
         int sum_row = 0;
         for (int j = 0; j < cols; j++){
             sum_row += m(i,j);
-            
-            if (sum_row > sumMaxRow){
+        }
+        
+        if (sum_row > sumMaxRow){
                 sumMaxRow = sum_row;
             }
+    }
+
+    int sumMaxCol = 0;
+    for(int j = 0; j < cols; j++){
+        int sum_cols = 0;
+        for (int i = 0; i < rows; i++){
+            sum_cols += m(i,j);
         }
+        
+        if (sum_cols > sumMaxCol){
+            sumMaxCol = sum_cols;
+        } 
     }
     
     std::cout << "La suma maxima es: " << sum_max << std::endl;
