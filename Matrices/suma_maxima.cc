@@ -16,7 +16,8 @@ int main(){
         std::cout << "Filas: "; std::cin >> rows;
     }
     
-    MatrixXd m(rows, cols);std::cout << "Enter elements (row-wise): " << std::endl;
+    MatrixXd m(rows, cols);
+    std::cout << "Enter elements (row-wise): " << std::endl;
 
     for (int i = 0; i < rows; i++){
         for (int j = 0; j < cols; j++){
@@ -81,6 +82,10 @@ int main(){
         sumMaxDiag = diag_sec;
     }
     
-    std::cout << sumMaxRow << "\n" << sumMaxCol << "\n" << sumMaxDiag << std::endl;
-    std::cout << "La suma maxima es: " << sum_max << std::endl;
+    Eigen::VectorXd v(3);
+    v << sumMaxRow, sumMaxCol, sumMaxDiag;
+    
+    std::sort(v.data(), v.data() + v.size());
+    
+    std::cout << "La suma maxima es: " << v[2] << std::endl;
 }
