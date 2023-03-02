@@ -13,11 +13,25 @@ std::shared_ptr< rclcpp::Publisher<nav_msgs::msg::Odometry> > publisher;
 
 double pos_x;
 double pos_y;
+double pos_z;
+double orientation_x;
+double orientation_y;
+double orientation_z;
+double orientation_w;
 
 void topic_callback(const nav_msgs::msg::Odometry::SharedPtr msg){
   pos_x = msg->pose.pose.position.x;
   pos_y = msg->pose.pose.position.y;
-  std::cout << "x: " << pos_x << "\ty: " << pos_y << std::endl;
+  orientation_x = msg->pose.pose.orientation.x;
+  orientation_y = msg->pose.pose.orientation.y;
+  orientation_z = msg->pose.pose.orientation.z;
+  orientation_w = msg->pose.pose.orientation.w;
+
+  double siny_cosp = 2* (orientation_w*orientation_z + orientation_x*orientation_y);
+  double cospy_cosp = 1 - 2*(orientation_y*orientation_y + orientation_z*orientation_z);
+  double pos_z = atan2(siny_cosp, cospy_cosp);
+  
+  std::cout << "x: " << pos_x << "\ty: " << pos_y << "\tz: " << pos_z << std::endl;
 }
 
 int main(int argc, char * argv[]){
