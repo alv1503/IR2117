@@ -1,0 +1,17 @@
+[0.011s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
+[0.041s] [35m[1mScanning dependencies of target odom[0m
+[0.054s] [ 50%] Built target square
+[0.057s] [ 75%] [32mBuilding CXX object CMakeFiles/odom.dir/src/square_odom.cpp.o[0m
+[0.839s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[0.839s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:14:84:[m[K [01;31m[Kerror: [m[K‘[01m[Kcallback[m[K’ was not declared in this scope; did you mean ‘[01m[Kcalloc[m[K’?
+[0.839s]    14 |   auto subscriber = node->create_subscription<nav_msgs::msg::Odometry>("odom", 10, [01;31m[Kcallback[m[K);
+[0.839s]       |                                                                                    [01;31m[K^~~~~~~~[m[K
+[0.839s]       |                                                                                    [32m[Kcalloc[m[K
+[0.855s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:[m[K At global scope:
+[0.855s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:62:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kdata[m[K’ was not declared in this scope
+[0.855s]    62 | int callback([01;31m[Kdata[m[K){
+[0.855s]       |              [01;31m[K^~~~[m[K
+[1.397s] make[2]: *** [CMakeFiles/odom.dir/build.make:63: CMakeFiles/odom.dir/src/square_odom.cpp.o] Error 1
+[1.397s] make[1]: *** [CMakeFiles/Makefile2:134: CMakeFiles/odom.dir/all] Error 2
+[1.397s] make: *** [Makefile:141: all] Error 2
+[1.399s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8

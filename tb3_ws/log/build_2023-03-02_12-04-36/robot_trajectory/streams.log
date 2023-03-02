@@ -1,0 +1,53 @@
+[0.011s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
+[0.030s] -- Found ament_cmake: 0.9.11 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.044s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.158s] -- Found rclcpp: 2.4.2 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.180s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.182s] -- Found rosidl_adapter: 1.3.0 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.265s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.297s] -- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.298s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.391s] -- Found geometry_msgs: 2.0.5 (/opt/ros/foxy/share/geometry_msgs/cmake)
+[0.412s] -- Found nav_msgs: 2.0.5 (/opt/ros/foxy/share/nav_msgs/cmake)
+[0.460s] -- Found ament_lint_auto: 0.9.7 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[0.506s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.506s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.506s] -- Configured cppcheck include dirs: 
+[0.506s] -- Configured cppcheck exclude dirs and/or files: 
+[0.507s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[0.507s] -- Configured cpplint exclude dirs and/or files: 
+[0.507s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.507s] -- Added test 'lint_cmake' to check CMake code style
+[0.507s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[0.508s] -- Added test 'uncrustify' to check C / C++ code style
+[0.508s] -- Configured uncrustify additional arguments: 
+[0.508s] -- Added test 'xmllint' to check XML markup files
+[0.510s] -- Configuring done
+[0.517s] -- Generating done
+[0.518s] -- Build files have been written to: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory
+[0.536s] [35m[1mScanning dependencies of target odom[0m
+[0.549s] [ 50%] Built target square
+[0.555s] [ 75%] [32mBuilding CXX object CMakeFiles/odom.dir/src/square_odom.cpp.o[0m
+[1.338s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[1.338s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:14:27:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class rclcpp::Node[m[K’ {aka ‘[01m[Kclass rclcpp::Node[m[K’} has no member named ‘[01m[Kcreate_subscriber[m[K’; did you mean ‘[01m[Kcreate_subscription[m[K’?
+[1.339s]    14 |   auto subscriber = node->[01;31m[Kcreate_subscriber[m[K<nav_msgs::msg::Odometry>("odom", 10, callback);
+[1.339s]       |                           [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[1.339s]       |                           [32m[Kcreate_subscription[m[K
+[1.339s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:14:68:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+[1.339s]    14 |   auto subscriber = node->create_subscriber<nav_msgs::msg::Odometry[01;31m[K>[m[K("odom", 10, callback);
+[1.339s]       |                                                                    [01;31m[K^[m[K
+[1.339s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:14:70:[m[K [01;35m[Kwarning: [m[Kleft operand of comma operator has no effect [[01;35m[K-Wunused-value[m[K]
+[1.339s]    14 |   auto subscriber = node->create_subscriber<nav_msgs::msg::Odometry>([01;35m[K"odom"[m[K, 10, callback);
+[1.339s]       |                                                                      [01;35m[K^~~~~~[m[K
+[1.340s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:14:82:[m[K [01;31m[Kerror: [m[K‘[01m[Kcallback[m[K’ was not declared in this scope; did you mean ‘[01m[Kcalloc[m[K’?
+[1.340s]    14 |   auto subscriber = node->create_subscriber<nav_msgs::msg::Odometry>("odom", 10, [01;31m[Kcallback[m[K);
+[1.340s]       |                                                                                  [01;31m[K^~~~~~~~[m[K
+[1.340s]       |                                                                                  [32m[Kcalloc[m[K
+[1.356s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:[m[K At global scope:
+[1.356s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:62:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kdata[m[K’ was not declared in this scope
+[1.357s]    62 | int callback([01;31m[Kdata[m[K){
+[1.357s]       |              [01;31m[K^~~~[m[K
+[1.896s] make[2]: *** [CMakeFiles/odom.dir/build.make:63: CMakeFiles/odom.dir/src/square_odom.cpp.o] Error 1
+[1.897s] make[1]: *** [CMakeFiles/Makefile2:134: CMakeFiles/odom.dir/all] Error 2
+[1.897s] make: *** [Makefile:141: all] Error 2
+[1.898s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
