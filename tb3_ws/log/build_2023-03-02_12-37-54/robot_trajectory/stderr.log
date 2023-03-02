@@ -1,0 +1,16 @@
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:34:63:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Knode[m[K’
+   34 |   node->declare_parameter("pos_x", n_msg.pose.pose.position.x)
+      |                                                               [01;31m[K^[m[K
+      |                                                               [32m[K;[m[K
+   35 |   [32m[Knode[m[K->declare_parameter("pos_y", n_msg.pose.pose.position.y)
+      |   [32m[K~~~~[m[K                                                         
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:38:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kangular_speed[m[K’ [[01;35m[K-Wunused-variable[m[K]
+   38 |   double [01;35m[Kangular_speed[m[K = node->get_parameter("angular_speed").get_parameter_value().get<double>();
+      |          [01;35m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:39:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ksquare_length[m[K’ [[01;35m[K-Wunused-variable[m[K]
+   39 |   double [01;35m[Ksquare_length[m[K = node->get_parameter("square_length").get_parameter_value().get<double>();
+      |          [01;35m[K^~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/odom.dir/build.make:63: CMakeFiles/odom.dir/src/square_odom.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:134: CMakeFiles/odom.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

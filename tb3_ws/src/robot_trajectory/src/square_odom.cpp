@@ -11,8 +11,13 @@ using namespace std::chrono_literals;
 int message;
 std::shared_ptr< rclcpp::Publisher<nav_msgs::msg::Odometry> > publisher;
 
+double pos_x;
+double pos_y;
+
 void topic_callback(const nav_msgs::msg::Odometry::SharedPtr msg){
-  std::cout << *msg << std::endl;
+  pos_x = msg->pose.pose.position.x;
+  pos_y = msg->pose.pose.position.y;
+  std::cout << "x: " << pos_x << "\ty: " << pos_y << std::endl;
 }
 
 int main(int argc, char * argv[]){
@@ -21,12 +26,12 @@ int main(int argc, char * argv[]){
   auto subscriber = node->create_subscription<nav_msgs::msg::Odometry>("odom", 10, topic_callback);
   auto publisher = node->create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 10);
   
+  geometry_msgs::msg::Twist message;
+  rclcpp::WallRate loop_rate(10ms);
+
   node->declare_parameter("linear_speed", 0.1);
   node->declare_parameter("angular_speed", M_PI/20);
   node->declare_parameter("square_length", 1.0);
-  
-  geometry_msgs::msg::Twist message;
-  rclcpp::WallRate loop_rate(10ms);
   
   double linear_speed = node->get_parameter("linear_speed").get_parameter_value().get<double>();
   double angular_speed = node->get_parameter("angular_speed").get_parameter_value().get<double>();
