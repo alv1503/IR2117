@@ -194,6 +194,19 @@ robot_trajectory_uninstall/fast:
 .PHONY : robot_trajectory_uninstall/fast
 
 #=============================================================================
+# Target rules for targets named odom
+
+# Build rule for target.
+odom: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 odom
+.PHONY : odom
+
+# fast build rule for target.
+odom/fast:
+	$(MAKE) -f CMakeFiles/odom.dir/build.make CMakeFiles/odom.dir/build
+.PHONY : odom/fast
+
+#=============================================================================
 # Target rules for targets named uninstall
 
 # Build rule for target.
@@ -233,6 +246,33 @@ src/square.cpp.s:
 	$(MAKE) -f CMakeFiles/square.dir/build.make CMakeFiles/square.dir/src/square.cpp.s
 .PHONY : src/square.cpp.s
 
+src/square_odom.o: src/square_odom.cpp.o
+
+.PHONY : src/square_odom.o
+
+# target to build an object file
+src/square_odom.cpp.o:
+	$(MAKE) -f CMakeFiles/odom.dir/build.make CMakeFiles/odom.dir/src/square_odom.cpp.o
+.PHONY : src/square_odom.cpp.o
+
+src/square_odom.i: src/square_odom.cpp.i
+
+.PHONY : src/square_odom.i
+
+# target to preprocess a source file
+src/square_odom.cpp.i:
+	$(MAKE) -f CMakeFiles/odom.dir/build.make CMakeFiles/odom.dir/src/square_odom.cpp.i
+.PHONY : src/square_odom.cpp.i
+
+src/square_odom.s: src/square_odom.cpp.s
+
+.PHONY : src/square_odom.s
+
+# target to generate assembly for a file
+src/square_odom.cpp.s:
+	$(MAKE) -f CMakeFiles/odom.dir/build.make CMakeFiles/odom.dir/src/square_odom.cpp.s
+.PHONY : src/square_odom.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -248,10 +288,14 @@ help:
 	@echo "... test"
 	@echo "... square"
 	@echo "... robot_trajectory_uninstall"
+	@echo "... odom"
 	@echo "... uninstall"
 	@echo "... src/square.o"
 	@echo "... src/square.i"
 	@echo "... src/square.s"
+	@echo "... src/square_odom.o"
+	@echo "... src/square_odom.i"
+	@echo "... src/square_odom.s"
 .PHONY : help
 
 

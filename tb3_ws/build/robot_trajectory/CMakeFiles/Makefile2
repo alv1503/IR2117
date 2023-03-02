@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_traje
 
 # The main recursive "all" target.
 all: CMakeFiles/square.dir/all
+all: CMakeFiles/odom.dir/all
 
 .PHONY : all
 
@@ -65,6 +66,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/square.dir/clean
 clean: CMakeFiles/robot_trajectory_uninstall.dir/clean
+clean: CMakeFiles/odom.dir/clean
 clean: CMakeFiles/uninstall.dir/clean
 
 .PHONY : clean
@@ -76,7 +78,7 @@ clean: CMakeFiles/uninstall.dir/clean
 CMakeFiles/square.dir/all:
 	$(MAKE) -f CMakeFiles/square.dir/build.make CMakeFiles/square.dir/depend
 	$(MAKE) -f CMakeFiles/square.dir/build.make CMakeFiles/square.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles --progress-num=1,2 "Built target square"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles --progress-num=3,4 "Built target square"
 .PHONY : CMakeFiles/square.dir/all
 
 # Build rule for subdir invocation for target.
@@ -122,6 +124,33 @@ robot_trajectory_uninstall: CMakeFiles/robot_trajectory_uninstall.dir/rule
 CMakeFiles/robot_trajectory_uninstall.dir/clean:
 	$(MAKE) -f CMakeFiles/robot_trajectory_uninstall.dir/build.make CMakeFiles/robot_trajectory_uninstall.dir/clean
 .PHONY : CMakeFiles/robot_trajectory_uninstall.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/odom.dir
+
+# All Build rule for target.
+CMakeFiles/odom.dir/all:
+	$(MAKE) -f CMakeFiles/odom.dir/build.make CMakeFiles/odom.dir/depend
+	$(MAKE) -f CMakeFiles/odom.dir/build.make CMakeFiles/odom.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles --progress-num=1,2 "Built target odom"
+.PHONY : CMakeFiles/odom.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/odom.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/odom.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles 0
+.PHONY : CMakeFiles/odom.dir/rule
+
+# Convenience name for target.
+odom: CMakeFiles/odom.dir/rule
+
+.PHONY : odom
+
+# clean rule for target.
+CMakeFiles/odom.dir/clean:
+	$(MAKE) -f CMakeFiles/odom.dir/build.make CMakeFiles/odom.dir/clean
+.PHONY : CMakeFiles/odom.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/uninstall.dir
