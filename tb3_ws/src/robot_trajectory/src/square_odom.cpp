@@ -53,7 +53,9 @@ void topic_callback(const nav_msgs::msg::Odometry::SharedPtr msg){
   dif_y = pos_y - y_ini;
   distancia = sqrt((dif_x)*(dif_x) + (dif_y)*(dif_y));
   
-  std::cout << "Initial x: " << x_ini << "\tInitial y: " << y_ini << "\tInitial z: " << z_ini << "\nx: " << pos_x << "\ty: " << pos_y << "\tz: " << pos_z << "\nDistancia" << distancia << "\n\n" << std::endl;
+  dif_z = pos_z - z_ini;
+  
+  std::cout << "Initial x: " << x_ini << "\tInitial y: " << y_ini << "\tInitial z: " << z_ini << "\nx: " << pos_x << "\ty: " << pos_y << "\tz: " << pos_z << "\n\nDistancia: " << distancia << "\nDiferencia de angulo: " << dif_z << "\n\n" << std::endl;
 }
 
 int main(int argc, char * argv[]){
