@@ -1,0 +1,7 @@
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:[m[K In function ‘[01m[Kvoid topic_callback(nav_msgs::msg::Odometry_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:54:220:[m[K [01;31m[Kerror: [m[Kunable to find string literal operator ‘[01m[Koperator""std[m[K’ with ‘[01m[Kconst char [3][m[K’, ‘[01m[Klong unsigned int[m[K’ arguments
+   54 |   std::cout << "Initial x: " << x_ini << "\tInitial y: " << y_ini << "\tInitial z: " << z_ini << "\nx: " << pos_x << "\ty: " << pos_y << "\tz: " << pos_z << "\nDiferencia x: " << dif_x << "\tDiferencia y: " << dif_y << [01;31m[K"\n\n"std[m[K::endl;
+      |                                                                                                                                                                                                                            [01;31m[K^~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/odom.dir/build.make:63: CMakeFiles/odom.dir/src/square_odom.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:134: CMakeFiles/odom.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

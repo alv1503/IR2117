@@ -22,6 +22,10 @@ double x_ini;
 double y_ini;
 double z_ini;
 bool first = true;
+double dif_x;
+double dif_y;
+double dif_z;
+double distancia;
 
 void topic_callback(const nav_msgs::msg::Odometry::SharedPtr msg){
   orientation_x = msg->pose.pose.orientation.x;
@@ -44,9 +48,12 @@ void topic_callback(const nav_msgs::msg::Odometry::SharedPtr msg){
       pos_x = msg->pose.pose.position.x;
       pos_y = msg->pose.pose.position.y;
   }
+
+  dif_x = pos_x - x_ini;
+  dif_y = pos_y - y_ini;
+  distancia = sqrt((dif_x)*(dif_x) + (dif_y)*(dif_y));
   
-  
-  std::cout << "Initial x: " << x_ini << "\tInitial y: " << y_ini << "\tInitial z: " << z_ini << "\nx: " << pos_x << "\ty: " << pos_y << "\tz: " << pos_z << std::endl;
+  std::cout << "Initial x: " << x_ini << "\tInitial y: " << y_ini << "\tInitial z: " << z_ini << "\nx: " << pos_x << "\ty: " << pos_y << "\tz: " << pos_z << "\nDistancia" << distancia << "\n\n" << std::endl;
 }
 
 int main(int argc, char * argv[]){
@@ -59,11 +66,9 @@ int main(int argc, char * argv[]){
   rclcpp::WallRate loop_rate(10ms);
 
   node->declare_parameter("linear_speed", 0.1);
-  node->declare_parameter("angular_speed", M_PI/20);
   node->declare_parameter("square_length", 1.0);
   
   double linear_speed = node->get_parameter("linear_speed").get_parameter_value().get<double>();
-  double angular_speed = node->get_parameter("angular_speed").get_parameter_value().get<double>();
   double square_length = node->get_parameter("square_length").get_parameter_value().get<double>();
   
   for (int j = 0; j < 4; j++){
@@ -72,20 +77,8 @@ int main(int argc, char * argv[]){
 
     while (rclcpp::ok() && (i<linear_iterations)){
         i++;
-        message.linear.x = linear_speed;
+        message.linear.x = 0.2;
         message.angular.z = 0.0;
-        publisher->publish(message);
-        rclcpp::spin_some(node);
-        loop_rate.sleep();
-    }
-    
-    i = 0;
-    double t = M_PI_2/angular_speed;
-    double angular_iterations = t/0.01;
-    while (rclcpp::ok() && (i<angular_iterations)){
-        i++;
-        message.linear.x = 0.0;
-        message.angular.z = angular_speed;
         publisher->publish(message);
         rclcpp::spin_some(node);
         loop_rate.sleep();

@@ -1,0 +1,17 @@
+[0.018s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
+[0.059s] [35m[1mScanning dependencies of target odom[0m
+[0.078s] [ 50%] Built target square
+[0.085s] [ 75%] [32mBuilding CXX object CMakeFiles/odom.dir/src/square_odom.cpp.o[0m
+[1.281s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:[m[K In function ‘[01m[Kvoid topic_callback(nav_msgs::msg::Odometry_<std::allocator<void> >::SharedPtr)[m[K’:
+[1.281s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:54:27:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[Kdouble[m[K’ and ‘[01m[Kdouble[m[K’ to binary ‘[01m[Koperator^[m[K’
+[1.281s]    54 |   distancia = sqrt([32m[K(dif_x)[m[K[01;31m[K^[m[K[34m[K2 + (dif_y)[m[K^2);
+[1.281s]       |                    [32m[K~~~~~~~[m[K[01;31m[K^[m[K[34m[K~~~~~~~~~~~[m[K
+[1.281s]       |                     [32m[K|[m[K        [34m[K|[m[K
+[1.281s]       |                     [32m[Kdouble[m[K   [34m[Kdouble[m[K
+[1.282s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:54:30:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around arithmetic in operand of ‘[01m[K^[m[K’ [[01;35m[K-Wparentheses[m[K]
+[1.282s]    54 |   distancia = sqrt((dif_x)^[01;35m[K2 + (dif_y)[m[K^2);
+[1.282s]       |                            [01;35m[K~~^~~~~~~~~[m[K
+[2.922s] make[2]: *** [CMakeFiles/odom.dir/build.make:63: CMakeFiles/odom.dir/src/square_odom.cpp.o] Error 1
+[2.922s] make[1]: *** [CMakeFiles/Makefile2:134: CMakeFiles/odom.dir/all] Error 2
+[2.922s] make: *** [Makefile:141: all] Error 2
+[2.924s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
