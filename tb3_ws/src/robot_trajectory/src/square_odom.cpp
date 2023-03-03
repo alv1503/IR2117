@@ -18,10 +18,12 @@ double orientation_x;
 double orientation_y;
 double orientation_z;
 double orientation_w;
+double x_ini;
+double y_ini;
+double z_ini;
+bool first = true;
 
 void topic_callback(const nav_msgs::msg::Odometry::SharedPtr msg){
-  pos_x = msg->pose.pose.position.x;
-  pos_y = msg->pose.pose.position.y;
   orientation_x = msg->pose.pose.orientation.x;
   orientation_y = msg->pose.pose.orientation.y;
   orientation_z = msg->pose.pose.orientation.z;
@@ -31,7 +33,20 @@ void topic_callback(const nav_msgs::msg::Odometry::SharedPtr msg){
   double cospy_cosp = 1 - 2*(orientation_y*orientation_y + orientation_z*orientation_z);
   double pos_z = atan2(siny_cosp, cospy_cosp);
   
-  std::cout << "x: " << pos_x << "\ty: " << pos_y << "\tz: " << pos_z << std::endl;
+  if (first){
+      x_ini = msg->pose.pose.position.x;
+      y_ini = msg->pose.pose.position.y;
+      z_ini = pos_z;
+      first = false;
+  }
+  
+  else{
+      pos_x = msg->pose.pose.position.x;
+      pos_y = msg->pose.pose.position.y;
+  }
+  
+  
+  std::cout << "Initial x: " << x_ini << "\tInitial y: " << y_ini << "\tInitial z: " << z_ini << "\nx: " << pos_x << "\ty: " << pos_y << "\tz: " << pos_z << std::endl;
 }
 
 int main(int argc, char * argv[]){
