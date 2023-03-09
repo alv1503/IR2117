@@ -32,7 +32,7 @@ void topic_callback(const nav_msgs::msg::Odometry::SharedPtr msg){
   orientation_w = msg->pose.pose.orientation.w;
   double siny_cosp = 2* (orientation_w*orientation_z + orientation_x*orientation_y);
   double cospy_cosp = 1 - 2*(orientation_y*orientation_y + orientation_z*orientation_z);
-  double pos_z = atan2(siny_cosp, cospy_cosp);
+  pos_z = atan2(siny_cosp, cospy_cosp);
   
   pos_x = msg->pose.pose.position.x;
   pos_y = msg->pose.pose.position.y;
@@ -59,6 +59,7 @@ int main(int argc, char * argv[]){
     x_ini = pos_x;
     y_ini = pos_y;
     z_ini = pos_z;
+    distancia = 0;
     while (rclcpp::ok() && (distancia < 1)){
         message.linear.x = 0.2;
         message.angular.z = 0.0;
