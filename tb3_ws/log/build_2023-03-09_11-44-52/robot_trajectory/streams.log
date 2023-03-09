@@ -1,0 +1,13 @@
+[0.021s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
+[0.096s] [35m[1mScanning dependencies of target odom[0m
+[0.115s] [ 50%] Built target square
+[0.119s] [ 75%] [32mBuilding CXX object CMakeFiles/odom.dir/src/square_odom.cpp.o[0m
+[1.502s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[1.502s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:76:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kdiz_z[m[K’ was not declared in this scope; did you mean ‘[01m[Kdif_z[m[K’?
+[1.502s]    76 |     while (rclcpp::ok() && ([01;31m[Kdiz_z[m[K < M_PI_2)){
+[1.502s]       |                             [01;31m[K^~~~~[m[K
+[1.502s]       |                             [32m[Kdif_z[m[K
+[3.251s] make[2]: *** [CMakeFiles/odom.dir/build.make:63: CMakeFiles/odom.dir/src/square_odom.cpp.o] Error 1
+[3.251s] make[1]: *** [CMakeFiles/Makefile2:134: CMakeFiles/odom.dir/all] Error 2
+[3.252s] make: *** [Makefile:141: all] Error 2
+[3.253s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8

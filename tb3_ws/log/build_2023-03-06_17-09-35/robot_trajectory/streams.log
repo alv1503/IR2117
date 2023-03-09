@@ -1,0 +1,13 @@
+[0.018s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
+[0.059s] [35m[1mScanning dependencies of target odom[0m
+[0.074s] [ 50%] Built target square
+[0.079s] [ 75%] [32mBuilding CXX object CMakeFiles/odom.dir/src/square_odom.cpp.o[0m
+[1.314s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[1.314s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:75:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kspin_node[m[K’ is not a member of ‘[01m[Krclcpp[m[K’; did you mean ‘[01m[Kspin_some[m[K’?
+[1.314s]    75 |         rclcpp::[01;31m[Kspin_node[m[K(node);
+[1.314s]       |                 [01;31m[K^~~~~~~~~[m[K
+[1.314s]       |                 [32m[Kspin_some[m[K
+[2.955s] make[2]: *** [CMakeFiles/odom.dir/build.make:63: CMakeFiles/odom.dir/src/square_odom.cpp.o] Error 1
+[2.955s] make[1]: *** [CMakeFiles/Makefile2:134: CMakeFiles/odom.dir/all] Error 2
+[2.955s] make: *** [Makefile:141: all] Error 2
+[2.958s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8

@@ -1,0 +1,19 @@
+[0.018s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
+[0.089s] [35m[1mScanning dependencies of target odom[0m
+[0.110s] [ 50%] Built target square
+[0.114s] [ 75%] [32mBuilding CXX object CMakeFiles/odom.dir/src/square_odom.cpp.o[0m
+[1.482s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[1.483s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:69:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kdif_pos[m[K’ was not declared in this scope; did you mean ‘[01m[Kdif_z[m[K’?
+[1.483s]    69 |     while (rclcpp::ok() && ([01;31m[Kdif_pos[m[K <= 1)){
+[1.483s]       |                             [01;31m[K^~~~~~~[m[K
+[1.483s]       |                             [32m[Kdif_z[m[K
+[1.493s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:65:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Klinear_speed[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[1.493s]    65 |   double [01;35m[Klinear_speed[m[K = node->get_parameter("linear_speed").get_parameter_value().get<double>();
+[1.493s]       |          [01;35m[K^~~~~~~~~~~~[m[K
+[1.493s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/square_odom.cpp:66:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ksquare_length[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[1.493s]    66 |   double [01;35m[Ksquare_length[m[K = node->get_parameter("square_length").get_parameter_value().get<double>();
+[1.493s]       |          [01;35m[K^~~~~~~~~~~~~[m[K
+[3.071s] make[2]: *** [CMakeFiles/odom.dir/build.make:63: CMakeFiles/odom.dir/src/square_odom.cpp.o] Error 1
+[3.071s] make[1]: *** [CMakeFiles/Makefile2:134: CMakeFiles/odom.dir/all] Error 2
+[3.071s] make: *** [Makefile:141: all] Error 2
+[3.073s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
