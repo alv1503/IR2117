@@ -11,12 +11,12 @@ double front;
 double left;
 double right;
 double back;
-double min_front_distance;
 
-std::vector<double> front_view_left(10);
-std::vector<double> front_view_right(10);
+Eigen::VectorXd front_view_left(10);
+Eigen::VectorXd front_view_right(10);
 
-Eigen::VectorXd front_view(20);
+double min_left;
+double min_right;
 
 bool move = true;
 
@@ -27,29 +27,15 @@ void topic_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg){
     back = msg->ranges[180];
     
     for(int i = 0; i < 10; i++){
-        front_view_right[i] = msg->ranges[i];
-        front_view_left[i] = msg->ranges[i + 350];
+        front_view_right(i) = msg->ranges[i];
+        front_view_left(i) = msg->ranges[i + 350];
     }
     
-    for(int i = 0; i < 20; i++){        
-        if (i < 10){
-            front_view(i) = front_view_left[i];
-        }
-        
-        else{
-            front_view(i) = front_view_right[i - 10];
-        }
-    }
+    min_left = front_view_left.minCoeff();
+    min_right = front_view_right.minCoeff();
     
-    min_front_distance = front_view.minCoeff();
-    
-    if ((min_front_distance > 1) && (min_front_distance < 5)){
-        move = true;
-    }
-    
-    else{
-        move = false;
-    }
+    if(min_left < 1 || min_right < 1) move = false;
+    else move = true;
     
     std::cout << "Front: " << front <<
                 "\tBack: " << back  <<
@@ -67,7 +53,7 @@ void topic_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg){
         
         if(i%2 == 0){std::cout << "\n";}
     }
-    std::cout << "\nClosest front distance: " << min_front_distance;
+    std::cout << "Min left: " << min_left << "\tMin right: " << min_right;
     std::cout << "\n" << std::endl;
     
 }
@@ -82,22 +68,33 @@ int main(int argc, char * argv[])
   
   rclcpp::WallRate loop_rate(10ms);
   
-  while (rclcpp::ok() && (move)) {
-    vel.linear.x = 0.22;
-    vel.angular.z = 0;
-    publisher->publish(vel);
+  while (rclcpp::ok()){
+    while(move) {
+        vel.linear.x = 0.22;
+        vel.angular.z = 0;
+        publisher->publish(vel);
+        rclcpp::spin_some(node);
+        loop_rate.sleep();
+    }
+  
+    while (!move){
+        if(min_left < min_right){
+            vel.linear.x = 0.0;
+            vel.angular.z = 0.5;
+        }
+        
+        else{
+            vel.linear.x = 0.0;
+            vel.angular.z = -0.5;
+        }
+      
+        publisher->publish(vel);
+        rclcpp::spin_some(node);
+        loop_rate.sleep();
     rclcpp::spin_some(node);
     loop_rate.sleep();
+    }
   }
-  
-  while (rclcpp::ok() && (!move)){
-      vel.linear.x = 0.0;
-      vel.angular.z = 0.5;
-      publisher->publish(vel);
-      rclcpp::spin_some(node);
-      loop_rate.sleep();
-  }
-  
   vel.linear.x = 0;
   vel.angular.z = 0;
   publisher->publish(vel);

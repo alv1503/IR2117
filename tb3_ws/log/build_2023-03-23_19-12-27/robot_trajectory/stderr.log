@@ -1,0 +1,23 @@
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:79:10:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K([m[K’ before ‘[01m[Kmin_left[m[K’
+   79 |       if [01;31m[Km[m[K[32m[Kin_left[m[K < min_right{
+      |          [01;31m[K^[m[K[32m[K~~~~~~~[m[K
+      |          [32m[K([m[K
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:84:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kelse[m[K’ without a previous ‘[01m[Kif[m[K’
+   84 |       [01;31m[Kelse[m[K{
+      |       [01;31m[K^~~~[m[K
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:86:31:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kpublisher[m[K’
+   86 |           vel.angular.z = -0.5
+      |                               [01;31m[K^[m[K
+      |                               [32m[K;[m[K
+   87 |       [32m[Kpublisher[m[K->publish(vel);
+      |       [32m[K~~~~~~~~~[m[K                
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:98:1:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+   98 | [01;31m[K}[m[K
+      | [01;31m[K^[m[K
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:60:1:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+   60 | [01;36m[K{[m[K
+      | [01;36m[K^[m[K
+make[2]: *** [CMakeFiles/wandering.dir/build.make:63: CMakeFiles/wandering.dir/src/wandering.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:82: CMakeFiles/wandering.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
