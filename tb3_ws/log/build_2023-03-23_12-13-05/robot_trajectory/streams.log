@@ -1,0 +1,16 @@
+[0.013s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
+[0.043s] [35m[1mScanning dependencies of target wandering[0m
+[0.057s] [ 66%] Built target odom
+[0.057s] [ 66%] Built target square
+[0.059s] [ 83%] [32mBuilding CXX object CMakeFiles/wandering.dir/src/wandering.cpp.o[0m
+[0.956s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:[m[K In function ‘[01m[Kvoid topic_callback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[0.956s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:24:57:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+[0.956s]    24 |                 "\tRight: "<< right << "\n" << std::endl
+[0.956s]       |                                                         [01;31m[K^[m[K
+[0.956s]       |                                                         [32m[K;[m[K
+[0.956s]    25 | [32m[K}[m[K
+[0.956s]       | [32m[K~[m[K                                                        
+[2.076s] make[2]: *** [CMakeFiles/wandering.dir/build.make:63: CMakeFiles/wandering.dir/src/wandering.cpp.o] Error 1
+[2.076s] make[1]: *** [CMakeFiles/Makefile2:82: CMakeFiles/wandering.dir/all] Error 2
+[2.076s] make: *** [Makefile:141: all] Error 2
+[2.077s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8

@@ -7,8 +7,21 @@ using namespace std::chrono_literals;
 
 std::shared_ptr< rclcpp::Publisher<sensor_msgs::msg::LaserScan> > publisher;
 
+double front;
+double left;
+double right;
+double back;
+
 void topic_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg){
-    std::cout << msg << std::endl;
+    front = msg->ranges[0];
+    left = msg->ranges[90];
+    right = msg->ranges[270];
+    back = msg->ranges[180];
+    
+    std::cout << "Front: " << front <<
+                "\tBack: " << back  <<
+                "\nLeft: " << left  <<
+                "\tRight: "<< right << "\n" << std::endl;
 }
 
 int main(int argc, char * argv[])

@@ -1,0 +1,14 @@
+[35m[1mScanning dependencies of target wandering[0m
+[ 66%] Built target odom
+[ 66%] Built target square
+[ 83%] [32mBuilding CXX object CMakeFiles/wandering.dir/src/wandering.cpp.o[0m
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:[m[K In function ‘[01m[Kvoid topic_callback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:24:57:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+   24 |                 "\tRight: "<< right << "\n" << std::endl
+      |                                                         [01;31m[K^[m[K
+      |                                                         [32m[K;[m[K
+   25 | [32m[K}[m[K
+      | [32m[K~[m[K                                                        
+make[2]: *** [CMakeFiles/wandering.dir/build.make:63: CMakeFiles/wandering.dir/src/wandering.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:82: CMakeFiles/wandering.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
