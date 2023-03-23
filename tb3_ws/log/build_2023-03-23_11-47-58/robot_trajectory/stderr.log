@@ -1,0 +1,18 @@
+CMake Error at CMakeLists.txt:23 (find_package):
+  By not providing "Findscan.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "scan", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "scan" with any of
+  the following names:
+
+    scanConfig.cmake
+    scan-config.cmake
+
+  Add the installation prefix of "scan" to CMAKE_PREFIX_PATH or set
+  "scan_DIR" to a directory containing one of the above files.  If "scan"
+  provides a separate development package or SDK, be sure it has been
+  installed.
+
+
+make: *** [Makefile:310: cmake_check_build_system] Error 1

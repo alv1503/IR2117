@@ -5,6 +5,7 @@
 /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles/rebuild_cache.dir
 /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles/edit_cache.dir
 /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles/test.dir
+/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles/wandering.dir
 /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles/square.dir
 /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles/robot_trajectory_uninstall.dir
 /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory/CMakeFiles/odom.dir

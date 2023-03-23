@@ -1,12 +1,11 @@
+
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <chrono>
 #include "rclcpp/rclcpp.hpp"
 #include "geometry_msgs/msg/twist.hpp"
 #include "nav_msgs/msg/odometry.hpp"
-
 using namespace std::chrono_literals;
-
 int message;
 std::shared_ptr< rclcpp::Publisher<nav_msgs::msg::Odometry> > publisher;
 double pos_x;
@@ -24,7 +23,6 @@ double dif_x;
 double dif_y;
 double dif_z;
 double distancia;
-
 void topic_callback(const nav_msgs::msg::Odometry::SharedPtr msg){
   orientation_x = msg->pose.pose.orientation.x;
   orientation_y = msg->pose.pose.orientation.y;
@@ -73,9 +71,7 @@ int main(int argc, char * argv[]){
         message.angular.z = 0.0;
         publisher->publish(message);
         rclcpp::spin_some(node);
-        loop_rate.sleep();
     }
-    
     while (rclcpp::ok() && (dif_z < M_PI_2)){
         message.linear.x = 0.0;
         message.angular.z = angular_speed;
@@ -83,7 +79,6 @@ int main(int argc, char * argv[]){
         rclcpp::spin_some(node);
         loop_rate.sleep();
     }
-    
   }
   message.linear.x = 0.0;
   message.angular.z = 0.0;
