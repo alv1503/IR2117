@@ -3,18 +3,20 @@
 #include "sensor_msgs/msg/laser_scan.hpp"
 #include "geometry_msgs/msg/twist.hpp"
 #include <vector>
+#include <Eigen/Dense>
 
 using namespace std::chrono_literals;
-
-std::shared_ptr< rclcpp::Publisher<sensor_msgs::msg::LaserScan> > publisher;
 
 double front;
 double left;
 double right;
 double back;
+double min_front_distance;
 
-std::vector<float> front_view_left(10);
-std::vector<float> front_view_right(10);
+std::vector<double> front_view_left(10);
+std::vector<double> front_view_right(10);
+
+Eigen::VectorXd front_view(20);
 
 void topic_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg){
     front = msg->ranges[0];
@@ -26,6 +28,18 @@ void topic_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg){
         front_view_right[i] = msg->ranges[i];
         front_view_left[i] = msg->ranges[i + 350];
     }
+    
+    for(int i = 0; i < 20; i++){        
+        if (i < 10){
+            front_view(i) = front_view_left[i];
+        }
+        
+        else{
+            front_view(i) = front_view_right[i - 10];
+        }
+    }
+    
+    min_front_distance = front_view.minCoeff();
     
     std::cout << "Front: " << front <<
                 "\tBack: " << back  <<
@@ -43,10 +57,10 @@ void topic_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg){
         
         if(i%2 == 0){std::cout << "\n";}
     }
+    std::cout << "\nClosest front distance: " << min_front_distance;
     std::cout << "\n" << std::endl;
     
 }
-
 int main(int argc, char * argv[])
 {
   rclcpp::init(argc, argv);
@@ -57,7 +71,6 @@ int main(int argc, char * argv[])
   geometry_msgs::msg::Twist vel;
   
   rclcpp::WallRate loop_rate(10ms);
-
   while (rclcpp::ok()) {
     vel.linear.x = 0;
     vel.angular.z = 0;
@@ -69,4 +82,3 @@ int main(int argc, char * argv[])
   rclcpp::shutdown();
   return 0;
 }
-

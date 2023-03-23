@@ -1,0 +1,63 @@
+[0.013s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
+[0.032s] -- Found ament_cmake: 0.9.11 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.047s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.178s] -- Found rclcpp: 2.4.2 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.202s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.204s] -- Found rosidl_adapter: 1.3.0 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.295s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.332s] -- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.333s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.445s] -- Found geometry_msgs: 2.0.5 (/opt/ros/foxy/share/geometry_msgs/cmake)
+[0.472s] -- Found nav_msgs: 2.0.5 (/opt/ros/foxy/share/nav_msgs/cmake)
+[0.528s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[0.587s] -- Found ament_lint_auto: 0.9.7 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[0.633s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.633s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.633s] -- Configured cppcheck include dirs: 
+[0.634s] -- Configured cppcheck exclude dirs and/or files: 
+[0.634s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[0.634s] -- Configured cpplint exclude dirs and/or files: 
+[0.634s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.634s] -- Added test 'lint_cmake' to check CMake code style
+[0.635s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[0.635s] -- Added test 'uncrustify' to check C / C++ code style
+[0.635s] -- Configured uncrustify additional arguments: 
+[0.635s] -- Added test 'xmllint' to check XML markup files
+[0.637s] -- Configuring done
+[0.649s] -- Generating done
+[0.650s] -- Build files have been written to: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory
+[0.670s] [35m[1mScanning dependencies of target wandering[0m
+[0.680s] [ 16%] [32mBuilding CXX object CMakeFiles/square.dir/src/square.cpp.o[0m
+[0.681s] [ 33%] [32mBuilding CXX object CMakeFiles/odom.dir/src/square_odom.cpp.o[0m
+[0.689s] [ 50%] [32mBuilding CXX object CMakeFiles/wandering.dir/src/wandering.cpp.o[0m
+[2.997s] [ 66%] [32m[1mLinking CXX executable square[0m
+[3.124s] [ 66%] Built target square
+[4.706s] [ 83%] [32m[1mLinking CXX executable odom[0m
+[4.907s] [ 83%] Built target odom
+[5.360s] [100%] [32m[1mLinking CXX executable wandering[0m
+[5.541s] [100%] Built target wandering
+[5.552s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
+[5.582s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory
+[5.588s] -- Install configuration: ""
+[5.588s] -- Installing: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/lib/robot_trajectory/square
+[5.588s] -- Set runtime path of "/home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/lib/robot_trajectory/square" to ""
+[5.588s] -- Installing: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/lib/robot_trajectory/odom
+[5.590s] -- Set runtime path of "/home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/lib/robot_trajectory/odom" to ""
+[5.590s] -- Installing: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/lib/robot_trajectory/wandering
+[5.591s] -- Set runtime path of "/home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/lib/robot_trajectory/wandering" to ""
+[5.591s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/share/ament_index/resource_index/package_run_dependencies/robot_trajectory
+[5.591s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/share/ament_index/resource_index/parent_prefix_path/robot_trajectory
+[5.591s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/share/robot_trajectory/environment/ament_prefix_path.sh
+[5.591s] -- Installing: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/share/robot_trajectory/environment/ament_prefix_path.dsv
+[5.591s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/share/robot_trajectory/environment/path.sh
+[5.591s] -- Installing: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/share/robot_trajectory/environment/path.dsv
+[5.591s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/share/robot_trajectory/local_setup.bash
+[5.592s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/share/robot_trajectory/local_setup.sh
+[5.592s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/share/robot_trajectory/local_setup.zsh
+[5.592s] -- Installing: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/share/robot_trajectory/local_setup.dsv
+[5.592s] -- Installing: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/share/robot_trajectory/package.dsv
+[5.592s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/share/ament_index/resource_index/packages/robot_trajectory
+[5.592s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/share/robot_trajectory/cmake/robot_trajectoryConfig.cmake
+[5.592s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/share/robot_trajectory/cmake/robot_trajectoryConfig-version.cmake
+[5.592s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/robot_trajectory/share/robot_trajectory/package.xml
+[5.594s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory

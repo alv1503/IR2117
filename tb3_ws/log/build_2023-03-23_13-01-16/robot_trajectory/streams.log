@@ -1,0 +1,28 @@
+[0.012s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
+[0.042s] [35m[1mScanning dependencies of target wandering[0m
+[0.056s] [ 66%] Built target odom
+[0.056s] [ 66%] Built target square
+[0.059s] [ 83%] [32mBuilding CXX object CMakeFiles/wandering.dir/src/wandering.cpp.o[0m
+[1.284s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:[m[K In function ‘[01m[Kvoid topic_callback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[1.284s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:19:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kfront[m[K’ was not declared in this scope
+[1.284s]    19 |     [01;31m[Kfront[m[K = msg->ranges[0];
+[1.284s]       |     [01;31m[K^~~~~[m[K
+[1.285s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:20:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kleft[m[K’ was not declared in this scope; did you mean ‘[01m[Kstd::left[m[K’?
+[1.285s]    20 |     [01;31m[Kleft[m[K = msg->ranges[90];
+[1.285s]       |     [01;31m[K^~~~[m[K
+[1.285s]       |     [32m[Kstd::left[m[K
+[1.285s] In file included from [01m[K/usr/include/c++/9/ios:42[m[K,
+[1.285s]                  from [01m[K/usr/include/c++/9/ostream:38[m[K,
+[1.285s]                  from [01m[K/usr/include/c++/9/iostream:39[m[K,
+[1.285s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executor.hpp:22[m[K,
+[1.285s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26[m[K,
+[1.285s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:21[m[K,
+[1.285s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+[1.285s]                  from [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:2[m[K:
+[1.285s] [01m[K/usr/include/c++/9/bits/ios_base.h:1011:3:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::left[m[K’ declared here
+[1.286s]  1011 |   [01;36m[Kleft[m[K(ios_base& __base)
+[1.286s]       |   [01;36m[K^~~~[m[K
+[2.444s] make[2]: *** [CMakeFiles/wandering.dir/build.make:63: CMakeFiles/wandering.dir/src/wandering.cpp.o] Error 1
+[2.444s] make[1]: *** [CMakeFiles/Makefile2:82: CMakeFiles/wandering.dir/all] Error 2
+[2.444s] make: *** [Makefile:141: all] Error 2
+[2.445s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8

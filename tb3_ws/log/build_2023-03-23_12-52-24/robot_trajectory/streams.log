@@ -1,0 +1,17 @@
+[0.012s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
+[0.043s] [35m[1mScanning dependencies of target wandering[0m
+[0.056s] [ 33%] Built target square
+[0.056s] [ 66%] Built target odom
+[0.060s] [ 83%] [32mBuilding CXX object CMakeFiles/wandering.dir/src/wandering.cpp.o[0m
+[1.263s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:[m[K In function ‘[01m[Kvoid topic_callback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[1.263s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:27:44:[m[K [01;31m[Kerror: [m[K‘[01m[Kv[m[K’ was not declared in this scope
+[1.263s]    27 |         front_view_left.conservativeResize([01;31m[Kv[m[K.size() + 1);
+[1.263s]       |                                            [01;31m[K^[m[K
+[1.264s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:30:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kfront_view_rigth[m[K’ was not declared in this scope; did you mean ‘[01m[Kfront_view_right[m[K’?
+[1.264s]    30 |         [01;31m[Kfront_view_rigth[m[K.conservativeResize(v.size() + 1);
+[1.264s]       |         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[1.264s]       |         [32m[Kfront_view_right[m[K
+[2.399s] make[2]: *** [CMakeFiles/wandering.dir/build.make:63: CMakeFiles/wandering.dir/src/wandering.cpp.o] Error 1
+[2.399s] make[1]: *** [CMakeFiles/Makefile2:82: CMakeFiles/wandering.dir/all] Error 2
+[2.399s] make: *** [Makefile:141: all] Error 2
+[2.400s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
