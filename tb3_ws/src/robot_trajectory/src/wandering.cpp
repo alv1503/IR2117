@@ -90,6 +90,14 @@ int main(int argc, char * argv[])
     loop_rate.sleep();
   }
   
+  while (rclcpp::ok() && (!move)){
+      vel.linear.x = 0.0;
+      vel.angular.z = 0.5;
+      publisher->publish(vel);
+      rclcpp::spin_some(node);
+      loop_rate.sleep();
+  }
+  
   vel.linear.x = 0;
   vel.angular.z = 0;
   publisher->publish(vel);
