@@ -18,6 +18,8 @@ std::vector<double> front_view_right(10);
 
 Eigen::VectorXd front_view(20);
 
+bool move = true;
+
 void topic_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg){
     front = msg->ranges[0];
     left = msg->ranges[90];
@@ -40,6 +42,14 @@ void topic_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg){
     }
     
     min_front_distance = front_view.minCoeff();
+    
+    if ((min_front_distance > 1) && (min_front_distance < 5)){
+        move = true;
+    }
+    
+    else{
+        move = false;
+    }
     
     std::cout << "Front: " << front <<
                 "\tBack: " << back  <<
@@ -71,13 +81,18 @@ int main(int argc, char * argv[])
   geometry_msgs::msg::Twist vel;
   
   rclcpp::WallRate loop_rate(10ms);
-  while (rclcpp::ok()) {
-    vel.linear.x = 0;
+  
+  while (rclcpp::ok() && (move)) {
+    vel.linear.x = 0.22;
     vel.angular.z = 0;
     publisher->publish(vel);
     rclcpp::spin_some(node);
     loop_rate.sleep();
   }
+  
+  vel.linear.x = 0;
+  vel.angular.z = 0;
+  publisher->publish(vel);
   
   rclcpp::shutdown();
   return 0;
