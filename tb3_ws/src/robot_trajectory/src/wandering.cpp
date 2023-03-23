@@ -2,6 +2,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/laser_scan.hpp"
 #include "geometry_msgs/msg/twist.hpp"
+#include <vector>
 
 using namespace std::chrono_literals;
 
@@ -12,16 +13,38 @@ double left;
 double right;
 double back;
 
+std::vector<float> front_view_left(10);
+std::vector<float> front_view_right(10);
+
 void topic_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg){
     front = msg->ranges[0];
     left = msg->ranges[90];
     right = msg->ranges[270];
     back = msg->ranges[180];
     
+    for(int i = 0; i < 10; i++){
+        front_view_right[i] = msg->ranges[i];
+        front_view_left[i] = msg->ranges[i + 350];
+    }
+    
     std::cout << "Front: " << front <<
                 "\tBack: " << back  <<
                 "\nLeft: " << left  <<
                 "\tRight: "<< right << "\n" << std::endl;
+    
+    for(int i = 0; i < 20; i++){
+        if(i < 10){
+            std::cout << "Range " << i << ": " << front_view_left[i] << "\t";
+        }
+        
+        else{
+            std::cout << "Range " << (i + 340) << ": " << front_view_right[i - 10] << "\t";
+        };
+        
+        if(i%2 == 0){std::cout << "\n";}
+    }
+    std::cout << "\n" << std::endl;
+    
 }
 
 int main(int argc, char * argv[])
