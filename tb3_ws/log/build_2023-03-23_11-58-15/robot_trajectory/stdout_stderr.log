@@ -1,0 +1,12 @@
+[35m[1mScanning dependencies of target wandering[0m
+[ 66%] Built target square
+[ 66%] Built target odom
+[ 83%] [32mBuilding CXX object CMakeFiles/wandering.dir/src/wandering.cpp.o[0m
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:13:88:[m[K [01;31m[Kerror: [m[K‘[01m[Kcallback[m[K’ was not declared in this scope; did you mean ‘[01m[Kcalloc[m[K’?
+   13 | = node->create_subscription<sensor_msgs::msg::LaserScan>("scan", 10, [01;31m[Kcallback[m[K);
+      |                                                                      [01;31m[K^~~~~~~~[m[K
+      |                                                                      [32m[Kcalloc[m[K
+make[2]: *** [CMakeFiles/wandering.dir/build.make:63: CMakeFiles/wandering.dir/src/wandering.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:82: CMakeFiles/wandering.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
