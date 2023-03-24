@@ -18,7 +18,8 @@ Eigen::VectorXd front_view_right(10);
 double min_left;
 double min_right;
 
-bool move = true;
+bool turn_right = false;
+bool turn_left = false;
 
 void topic_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg){
     front = msg->ranges[0];
@@ -34,8 +35,20 @@ void topic_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg){
     min_left = front_view_left.minCoeff();
     min_right = front_view_right.minCoeff();
     
-    if(min_left < 1 || min_right < 1) move = false;
-    else move = true;
+    if((min_left < 1) || (min_right < 1)){
+        if(min_left < min_right){
+            turn_right = true;
+        }
+        
+        else{
+            turn_left = true;
+        }
+    }
+    
+    else{
+        turn_left = false;
+        turn_right = false;
+    }
     
     std::cout << "Front: " << front <<
                 "\tBack: " << back  <<
@@ -57,8 +70,8 @@ void topic_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg){
     std::cout << "\n" << std::endl;
     
 }
-int main(int argc, char * argv[])
-{
+
+int main(int argc, char * argv[]){
   rclcpp::init(argc, argv);
   auto node = rclcpp::Node::make_shared("wandering");
   auto publisher = node->create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 10);
@@ -69,32 +82,26 @@ int main(int argc, char * argv[])
   rclcpp::WallRate loop_rate(10ms);
   
   while (rclcpp::ok()){
-    while(move) {
+    if((!turn_left) && (!turn_right)) {
         vel.linear.x = 0.22;
         vel.angular.z = 0;
-        publisher->publish(vel);
-        rclcpp::spin_some(node);
-        loop_rate.sleep();
     }
   
-    while (!move){
-        if(min_left < min_right){
-            vel.linear.x = 0.0;
-            vel.angular.z = 0.5;
-        }
-        
-        else{
-            vel.linear.x = 0.0;
-            vel.angular.z = -0.5;
-        }
+    else if(turn_right){
+        vel.linear.x = 0.22;
+        vel.angular.z = 0.5;
+    }
+    
+    else{
+        vel.linear.x = 0.22;
+        vel.angular.z = -0.5;
+    }
       
-        publisher->publish(vel);
-        rclcpp::spin_some(node);
-        loop_rate.sleep();
+    publisher->publish(vel);
     rclcpp::spin_some(node);
     loop_rate.sleep();
-    }
   }
+  
   vel.linear.x = 0;
   vel.angular.z = 0;
   publisher->publish(vel);

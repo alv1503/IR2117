@@ -1,0 +1,27 @@
+[0.017s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
+[0.053s] [35m[1mScanning dependencies of target wandering[0m
+[0.070s] [ 66%] Built target square
+[0.070s] [ 66%] Built target odom
+[0.075s] [ 83%] [32mBuilding CXX object CMakeFiles/wandering.dir/src/wandering.cpp.o[0m
+[1.598s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:104:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kvel[m[K’ does not name a type
+[1.598s]   104 |   [01;31m[Kvel[m[K.linear.x = 0;
+[1.598s]       |   [01;31m[K^~~[m[K
+[1.598s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:105:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kvel[m[K’ does not name a type
+[1.598s]   105 |   [01;31m[Kvel[m[K.angular.z = 0;
+[1.598s]       |   [01;31m[K^~~[m[K
+[1.600s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:106:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher[m[K’ does not name a type
+[1.600s]   106 |   [01;31m[Kpublisher[m[K->publish(vel);
+[1.600s]       |   [01;31m[K^~~~~~~~~[m[K
+[1.600s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:108:21:[m[K [01;31m[Kerror: [m[Kexpected constructor, destructor, or type conversion before ‘[01m[K;[m[K’ token
+[1.600s]   108 |   rclcpp::shutdown()[01;31m[K;[m[K
+[1.600s]       |                     [01;31m[K^[m[K
+[1.600s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:109:3:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kreturn[m[K’
+[1.600s]   109 |   [01;31m[Kreturn[m[K 0;
+[1.600s]       |   [01;31m[K^~~~~~[m[K
+[1.600s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/robot_trajectory/src/wandering.cpp:110:1:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+[1.600s]   110 | [01;31m[K}[m[K
+[1.600s]       | [01;31m[K^[m[K
+[3.097s] make[2]: *** [CMakeFiles/wandering.dir/build.make:63: CMakeFiles/wandering.dir/src/wandering.cpp.o] Error 1
+[3.097s] make[1]: *** [CMakeFiles/Makefile2:82: CMakeFiles/wandering.dir/all] Error 2
+[3.097s] make: *** [Makefile:141: all] Error 2
+[3.102s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory' returned '2': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/robot_trajectory -- -j8 -l8
