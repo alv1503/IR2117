@@ -1,5 +1,6 @@
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/laser_scan.hpp"
+#include "example_interfaces/msg/bool.hpp"
 #include <iostream>
 
 void topic_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg){
@@ -11,6 +12,7 @@ int main(int argc, char * argv[]){
     
     auto node = rclcpp::Node::make_shared("detector");
     auto subscriber = node->create_subscription<sensor_msgs::msg::LaserScan>("scan", 10, topic_callback);
+    auto publisher = node->create_publisher<example_interfaces::msg::Bool>("obstacle", 10);
     
     rclcpp::spin(node);
     rclcpp::shutdown();
