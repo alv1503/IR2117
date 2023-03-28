@@ -1,0 +1,13 @@
+[35m[1mScanning dependencies of target detector[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/detector.dir/src/detector.cpp.o[0m
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/detector.cpp:6:78:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K>[m[K’ token
+    6 | std::shared_ptr< rclcpp::Publisher<example_interfaces::msg::Bool> > publisher[01;31m[K>[m[K
+      |                                                                              [01;31m[K^[m[K
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/detector.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/detector.cpp:18:90:[m[K [01;31m[Kerror: [m[K‘[01m[Ktopic_callback[m[K’ was not declared in this scope
+   18 | ->create_subscription<sensor_msgs::msg::LaserScan>("scan", 10, [01;31m[Ktopic_callback[m[K);
+      |                                                                [01;31m[K^~~~~~~~~~~~~~[m[K
+
+make[2]: *** [CMakeFiles/detector.dir/build.make:63: CMakeFiles/detector.dir/src/detector.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/detector.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

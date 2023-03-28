@@ -1,0 +1,14 @@
+[0.024s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles -- -j8 -l8
+[0.072s] [35m[1mScanning dependencies of target detector[0m
+[0.099s] [ 50%] [32mBuilding CXX object CMakeFiles/detector.dir/src/detector.cpp.o[0m
+[1.303s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/detector.cpp:[m[K In function ‘[01m[Kvoid topic_callback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[1.303s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/detector.cpp:9:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher[m[K’ was not declared in this scope
+[1.303s]     9 |     [01;31m[Kpublisher[m[K->publish(out_msg);
+[1.303s]       |     [01;31m[K^~~~~~~~~[m[K
+[1.303s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/detector.cpp:6:66:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmsg[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[1.303s]     6 | void topic_callback([01;35m[Kconst sensor_msgs::msg::LaserScan::SharedPtr msg[m[K){
+[1.303s]       |                     [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[2.924s] make[2]: *** [CMakeFiles/detector.dir/build.make:63: CMakeFiles/detector.dir/src/detector.cpp.o] Error 1
+[2.924s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/detector.dir/all] Error 2
+[2.924s] make: *** [Makefile:141: all] Error 2
+[2.926s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles -- -j8 -l8

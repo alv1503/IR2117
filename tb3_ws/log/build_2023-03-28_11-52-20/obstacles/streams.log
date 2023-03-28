@@ -1,0 +1,16 @@
+[0.024s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles -- -j8 -l8
+[0.072s] [35m[1mScanning dependencies of target detector[0m
+[0.097s] [ 50%] [32mBuilding CXX object CMakeFiles/detector.dir/src/detector.cpp.o[0m
+[1.301s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/detector.cpp:6:6:[m[K [01;31m[Kerror: [m[K‘[01m[Ksharedptr[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a template type; did you mean ‘[01m[Kshared_ptr[m[K’?
+[1.301s]     6 | std::[01;31m[Ksharedptr[m[K< rclcpp::Publisher<example_interfaces::msg::Bool> > publisher>
+[1.301s]       |      [01;31m[K^~~~~~~~~[m[K
+[1.302s]       |      [32m[Kshared_ptr[m[K
+[1.305s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/detector.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[1.305s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/detector.cpp:18:90:[m[K [01;31m[Kerror: [m[K‘[01m[Ktopic_callback[m[K’ was not declared in this scope
+[1.305s]    18 | ->create_subscription<sensor_msgs::msg::LaserScan>("scan", 10, [01;31m[Ktopic_callback[m[K);
+[1.305s]       |                                                                [01;31m[K^~~~~~~~~~~~~~[m[K
+[1.305s] 
+[2.097s] make[2]: *** [CMakeFiles/detector.dir/build.make:63: CMakeFiles/detector.dir/src/detector.cpp.o] Error 1
+[2.098s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/detector.dir/all] Error 2
+[2.098s] make: *** [Makefile:141: all] Error 2
+[2.100s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles -- -j8 -l8

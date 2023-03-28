@@ -1,0 +1,2 @@
+Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles': /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles -- -j8 -l8
+Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles' returned '2': /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles -- -j8 -l8

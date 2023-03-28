@@ -1,0 +1,12 @@
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/detector.cpp:6:6:[m[K [01;31m[Kerror: [m[K‘[01m[Ksharedptr[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a template type; did you mean ‘[01m[Kshared_ptr[m[K’?
+    6 | std::[01;31m[Ksharedptr[m[K< rclcpp::Publisher<example_interfaces::msg::Bool> > publisher>
+      |      [01;31m[K^~~~~~~~~[m[K
+      |      [32m[Kshared_ptr[m[K
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/detector.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/detector.cpp:18:90:[m[K [01;31m[Kerror: [m[K‘[01m[Ktopic_callback[m[K’ was not declared in this scope
+   18 | ->create_subscription<sensor_msgs::msg::LaserScan>("scan", 10, [01;31m[Ktopic_callback[m[K);
+      |                                                                [01;31m[K^~~~~~~~~~~~~~[m[K
+
+make[2]: *** [CMakeFiles/detector.dir/build.make:63: CMakeFiles/detector.dir/src/detector.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/detector.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
