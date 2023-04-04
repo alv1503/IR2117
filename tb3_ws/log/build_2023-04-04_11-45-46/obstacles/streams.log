@@ -1,0 +1,29 @@
+[0.034s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles -- -j8 -l8
+[0.121s] [35m[1mScanning dependencies of target detector[0m
+[0.160s] [ 50%] [32mBuilding CXX object CMakeFiles/detector.dir/src/detector.cpp.o[0m
+[5.646s] [100%] [32m[1mLinking CXX executable detector[0m
+[5.943s] [100%] Built target detector
+[5.955s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles -- -j8 -l8
+[5.981s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles
+[5.990s] -- Install configuration: ""
+[5.990s] -- Installing: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/obstacles/lib/obstacles/detector
+[5.992s] -- Set runtime path of "/home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/obstacles/lib/obstacles/detector" to ""
+[5.992s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/obstacles/share/obstacles/launch
+[5.992s] -- Installing: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/obstacles/share/obstacles/launch/triple_detector.launch.py
+[5.992s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/obstacles/share/obstacles/launch/detector_test.launch.py
+[5.992s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/obstacles/share/ament_index/resource_index/package_run_dependencies/obstacles
+[5.992s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/obstacles/share/ament_index/resource_index/parent_prefix_path/obstacles
+[5.993s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/obstacles/share/obstacles/environment/ament_prefix_path.sh
+[5.993s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/obstacles/share/obstacles/environment/ament_prefix_path.dsv
+[5.993s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/obstacles/share/obstacles/environment/path.sh
+[5.993s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/obstacles/share/obstacles/environment/path.dsv
+[5.993s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/obstacles/share/obstacles/local_setup.bash
+[5.993s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/obstacles/share/obstacles/local_setup.sh
+[5.993s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/obstacles/share/obstacles/local_setup.zsh
+[5.993s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/obstacles/share/obstacles/local_setup.dsv
+[5.993s] -- Installing: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/obstacles/share/obstacles/package.dsv
+[5.993s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/obstacles/share/ament_index/resource_index/packages/obstacles
+[5.993s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/obstacles/share/obstacles/cmake/obstaclesConfig.cmake
+[5.993s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/obstacles/share/obstacles/cmake/obstaclesConfig-version.cmake
+[5.993s] -- Up-to-date: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/install/obstacles/share/obstacles/package.xml
+[5.995s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles
