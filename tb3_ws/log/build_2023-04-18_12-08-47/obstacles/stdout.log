@@ -1,0 +1,6 @@
+[35m[1mScanning dependencies of target avoidance[0m
+[35m[1mScanning dependencies of target detector[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/detector.dir/src/detector.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/avoidance.dir/src/avoidance.cpp.o[0m
+[ 75%] [32m[1mLinking CXX executable detector[0m
+[ 75%] Built target detector

@@ -1,0 +1,68 @@
+[0.022s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles -- -j8 -l8
+[0.066s] -- Found ament_cmake: 0.9.11 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.087s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.237s] -- Found rclcpp: 2.4.2 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.268s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.271s] -- Found rosidl_adapter: 1.3.0 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.371s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.412s] -- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.413s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.524s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[0.609s] -- Found example_interfaces: 0.9.1 (/opt/ros/foxy/share/example_interfaces/cmake)
+[0.692s] -- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[0.742s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.743s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.744s] -- Configured cppcheck include dirs: 
+[0.744s] -- Configured cppcheck exclude dirs and/or files: 
+[0.744s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[0.744s] -- Configured cpplint exclude dirs and/or files: 
+[0.745s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.745s] -- Added test 'lint_cmake' to check CMake code style
+[0.745s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[0.746s] -- Added test 'uncrustify' to check C / C++ code style
+[0.746s] -- Configured uncrustify additional arguments: 
+[0.746s] -- Added test 'xmllint' to check XML markup files
+[0.748s] -- Configuring done
+[0.761s] -- Generating done
+[0.762s] -- Build files have been written to: /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles
+[0.780s] [35m[1mScanning dependencies of target avoidance[0m
+[0.798s] [ 50%] Built target detector
+[0.833s] [ 75%] [32mBuilding CXX object CMakeFiles/avoidance.dir/src/avoidance.cpp.o[0m
+[1.794s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/avoidance.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[1.794s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/avoidance.cpp:28:5:[m[K [01;31m[Kerror: [m[K‘[01m[Krclpcpp[m[K’ has not been declared
+[1.795s]    28 |     [01;31m[Krclpcpp[m[K::init(argc, argv);
+[1.795s]       |     [01;31m[K^~~~~~~[m[K
+[1.812s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/avoidance.cpp:44:22:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kcase[m[K’
+[1.812s]    44 |                 break
+[1.812s]       |                      [01;31m[K^[m[K
+[1.812s]       |                      [32m[K;[m[K
+[1.812s]    45 | 
+[1.812s]    46 |             [32m[Kcase[m[K AVOIDING_RIGHT:
+[1.812s]       |             [32m[K~~~~[m[K      
+[1.812s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/avoidance.cpp:50:22:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kelse[m[K’
+[1.812s]    50 |                 break
+[1.813s]       |                      [01;31m[K^[m[K
+[1.813s]       |                      [32m[K;[m[K
+[1.813s]    51 | 
+[1.813s]    52 |             [32m[Kelse[m[K:
+[1.813s]       |             [32m[K~~~~[m[K      
+[1.813s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/avoidance.cpp:52:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kelse[m[K’ without a previous ‘[01m[Kif[m[K’
+[1.813s]    52 |             [01;31m[Kelse[m[K:
+[1.813s]       |             [01;31m[K^~~~[m[K
+[1.813s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/avoidance.cpp:52:17:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K:[m[K’ token
+[1.813s]    52 |             else[01;31m[K:[m[K
+[1.813s]       |                 [01;31m[K^[m[K
+[1.813s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/avoidance.cpp:56:22:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+[1.813s]    56 |                 break
+[1.813s]       |                      [01;31m[K^[m[K
+[1.813s]       |                      [32m[K;[m[K
+[1.813s]    57 |         [32m[K}[m[K
+[1.813s]       |         [32m[K~[m[K             
+[1.813s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/avoidance.cpp:62:13:[m[K [01;35m[Kwarning: [m[Kstatement is a reference, not call, to function ‘[01m[Krclcpp::shutdown[m[K’ [[01;35m[K-Waddress[m[K]
+[1.813s]    62 |     [01;35m[Krclcpp::shutdown[m[K;
+[1.813s]       |     [01;35m[K~~~~~~~~^~~~~~~~[m[K
+[1.813s] [01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/avoidance.cpp:62:13:[m[K [01;35m[Kwarning: [m[Kstatement has no effect [[01;35m[K-Wunused-value[m[K]
+[2.970s] make[2]: *** [CMakeFiles/avoidance.dir/build.make:63: CMakeFiles/avoidance.dir/src/avoidance.cpp.o] Error 1
+[2.970s] make[1]: *** [CMakeFiles/Makefile2:107: CMakeFiles/avoidance.dir/all] Error 2
+[2.970s] make: *** [Makefile:141: all] Error 2
+[2.972s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles -- -j8 -l8

@@ -6,5 +6,6 @@
 /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles/CMakeFiles/edit_cache.dir
 /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles/CMakeFiles/test.dir
 /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles/CMakeFiles/detector.dir
+/home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles/CMakeFiles/avoidance.dir
 /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles/CMakeFiles/obstacles_uninstall.dir
 /home/alvaro/Documents/GitHub/IR2117/tb3_ws/build/obstacles/CMakeFiles/uninstall.dir

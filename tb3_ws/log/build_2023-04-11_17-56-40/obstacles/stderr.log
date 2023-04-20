@@ -1,0 +1,5 @@
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/avoidance.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/avoidance.cpp:62:13:[m[K [01;35m[Kwarning: [m[Kstatement is a reference, not call, to function ‘[01m[Krclcpp::shutdown[m[K’ [[01;35m[K-Waddress[m[K]
+   62 |     [01;35m[Krclcpp::shutdown[m[K;
+      |     [01;35m[K~~~~~~~~^~~~~~~~[m[K
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/avoidance.cpp:62:13:[m[K [01;35m[Kwarning: [m[Kstatement has no effect [[01;35m[K-Wunused-value[m[K]

@@ -1,0 +1,19 @@
+[ 25%] [32mBuilding CXX object CMakeFiles/avoidance.dir/src/avoidance.cpp.o[0m
+[ 75%] Built target detector
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/avoidance.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/avoidance.cpp:28:5:[m[K [01;31m[Kerror: [m[K‘[01m[Krclpcpp[m[K’ has not been declared
+   28 |     [01;31m[Krclpcpp[m[K::init(argc, argv);
+      |     [01;31m[K^~~~~~~[m[K
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/avoidance.cpp:52:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kelse[m[K’ without a previous ‘[01m[Kif[m[K’
+   52 |             [01;31m[Kelse[m[K:
+      |             [01;31m[K^~~~[m[K
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/avoidance.cpp:52:17:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K:[m[K’ token
+   52 |             else[01;31m[K:[m[K
+      |                 [01;31m[K^[m[K
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/avoidance.cpp:62:13:[m[K [01;35m[Kwarning: [m[Kstatement is a reference, not call, to function ‘[01m[Krclcpp::shutdown[m[K’ [[01;35m[K-Waddress[m[K]
+   62 |     [01;35m[Krclcpp::shutdown[m[K;
+      |     [01;35m[K~~~~~~~~^~~~~~~~[m[K
+[01m[K/home/alvaro/Documents/GitHub/IR2117/tb3_ws/src/obstacles/src/avoidance.cpp:62:13:[m[K [01;35m[Kwarning: [m[Kstatement has no effect [[01;35m[K-Wunused-value[m[K]
+make[2]: *** [CMakeFiles/avoidance.dir/build.make:63: CMakeFiles/avoidance.dir/src/avoidance.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:107: CMakeFiles/avoidance.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
