@@ -34,6 +34,9 @@ int main(int argc, char * argv[]) {
   int r[5] = {0, 0, 223, 244, 0};
   int g[5] = {129, 0, 0, 195, 159};
   int b[5] = {200, 0, 36, 0, 61};
+  
+  double desplazamiento_x[5] = {-2.166667, 0, 2.166667, -1.166667, 1.166667};
+  double desplazamiento_y[5] = {0, 0, 0, -1, -1};
 
   rclcpp::Client<SetPen>::SharedPtr client_set_pen = node->create_client<SetPen>("/turtle1/set_pen");
   auto request_set_pen = std::make_shared<SetPen::Request>();
@@ -43,36 +46,46 @@ int main(int argc, char * argv[]) {
   auto request_teleport_absolute = std::make_shared<TeleportAbsolute::Request>();
   auto result_teleport_absolute = client_teleport_absolute->async_send_request(request_teleport_absolute);
 
-		// Change colors and disable pen
-  request_set_pen->r = r[0];
-  request_set_pen->g = g[0];
-  request_set_pen->b = b[0];
-  request_set_pen->width = 5;
-  request_set_pen->off = 1;
+  for (int i = 0; i < 2; i++){
+    request_set_pen->r = r[i];
+    request_set_pen->g = g[i];
+    request_set_pen->b = b[i];
+    request_set_pen->width = 5;
+    request_set_pen->off = 1;
 
-  result_set_pen = client_set_pen->async_send_request(request_set_pen);
-
-  request_set_pen->off = 0;
-  result_set_pen = client_set_pen->async_send_request(request_set_pen);
-
-  loop_rate.sleep();
-
-  j = 0; 
-  while (rclcpp::ok() && (j <= iterations)) {
-    vel_msg.linear.x = v_linear;
-    vel_msg.angular.z = v_angular;
-    publisher->publish(vel_msg);
+    result_set_pen = client_set_pen->async_send_request(request_set_pen);
     
-    j++;
+    request_teleport_absolute = std::make_shared<TeleportAbsolute::Request>();
+    request_teleport_absolute->x = 5.544445 + desplazamiento_x[i] * radius;
+    request_teleport_absolute->y = 5.544445 + desplazamiento_y[i] * radius;
+    request_teleport_absolute->theta = 0;
+    
+    result_teleport_absolute = client_teleport_absolute->async_send_request(request_teleport_absolute);
+        
+        
+    request_set_pen->off = 0;
+    result_set_pen = client_set_pen->async_send_request(request_set_pen);
+
+    loop_rate.sleep();
+
+    j = 0; 
+    while (rclcpp::ok() && (j <= iterations)) {
+        vel_msg.linear.x = v_linear;
+        vel_msg.angular.z = v_angular;
+        publisher->publish(vel_msg);
+        
+        j++;
+        rclcpp::spin_some(node);
+        loop_rate.sleep();
+    }
+    vel_msg.linear.x = 0.0;
+    vel_msg.angular.z = 0.0;
+    publisher->publish(vel_msg);
+
     rclcpp::spin_some(node);
     loop_rate.sleep();
   }
-  vel_msg.linear.x = 0.0;
-  vel_msg.angular.z = 0.0;
-  publisher->publish(vel_msg);
-
-  rclcpp::spin_some(node);
-  loop_rate.sleep();
+  
   rclcpp::shutdown();
   return 0;
 }
