@@ -46,7 +46,7 @@ int main(int argc, char * argv[]) {
   auto request_teleport_absolute = std::make_shared<TeleportAbsolute::Request>();
   auto result_teleport_absolute = client_teleport_absolute->async_send_request(request_teleport_absolute);
 
-  for (int i = 0; i < 3; i++){
+  for (int i = 0; i < 4; i++){
     request_set_pen->r = r[i];
     request_set_pen->g = g[i];
     request_set_pen->b = b[i];
