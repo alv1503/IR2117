@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(cpp_srvcli)
+project(action_tutorials_cpp)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -17,21 +17,33 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(action_tutorials_interfaces REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(example_interfaces REQUIRED)
+find_package(rclcpp_action REQUIRED)
+find_package(rclcpp_components REQUIRED)
 
-add_executable(server src/add_two_ints_server.cpp)
-ament_target_dependencies(server
-rclcpp example_interfaces)
-
-add_executable(client src/add_two_ints_client.cpp)
-ament_target_dependencies(client rclcpp example_interfaces)
+add_executable(action_server src/action_server.cpp)
+ament_target_dependencies(action_server
+  rclcpp
+  rclcpp_action
+  action_tutorials_interfaces)
 
 install(TARGETS
-server
-client
-DESTINATION lib/${PROJECT_NAME})
+  action_server
+  DESTINATION lib/${PROJECT_NAME})
 
+
+add_executable(action_client src/action_client.cpp)
+ament_target_dependencies(action_client
+  rclcpp
+  rclcpp_action
+  action_tutorials_interfaces)
+  
+install(TARGETS
+  action_server
+  action_client
+  DESTINATION lib/${PROJECT_NAME})
+  
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
