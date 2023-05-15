@@ -17,21 +17,27 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(olympic_interfaces REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(turtlesim REQUIRED)
 find_package(rclcpp_action REQUIRED)
 find_package(rclcpp_components REQUIRED)
+find_package(olympic_interfaces REQUIRED)
 
 add_executable(action_server src/action_server.cpp)
 ament_target_dependencies(action_server
   rclcpp
   rclcpp_action
+  geometry_msgs
+  turtlesim
   olympic_interfaces)
-  
-install(TARGETS
-  action_server
-  DESTINATION lib/${PROJECT_NAME})
 
+add_executable(action_client src/action_client.cpp)
+ament_target_dependencies(action_client
+  rclcpp
+  rclcpp_action
+  olympic_interfaces)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -43,5 +49,13 @@ if(BUILD_TESTING)
   #set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
+
+install(TARGETS 
+  action_server
+  action_client
+  DESTINATION lib/${PROJECT_NAME})
+
+install(DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME})
 
 ament_package()

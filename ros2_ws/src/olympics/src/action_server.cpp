@@ -5,7 +5,7 @@
 #include "rclcpp_action/rclcpp_action.hpp"
 
 using Rings = 
-  action_tutorials_interfaces::action::Rings;
+  olympic_interfaces::action::Rings;
 
 using GoalHandleRings = 
   rclcpp_action::ServerGoalHandle<Rings>;
@@ -15,7 +15,7 @@ rclcpp_action::GoalResponse handle_goal(
   std::shared_ptr<const Rings::Goal> goal)
 {
   RCLCPP_INFO(rclcpp::get_logger("server"), 
-    "Got goal request with order %d", goal->order);
+    "Got goal request with order %d", goal->radius);
   (void)uuid;
   return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
 }
