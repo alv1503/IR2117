@@ -86,6 +86,7 @@ void execute(
   auto request_teleport_absolute = std::make_shared<TeleportAbsolute::Request>();
   auto result_teleport_absolute = client_teleport_absolute->async_send_request(request_teleport_absolute);
   
+  for (int i = 0; i < 1; i++) {
     if (goal_handle->is_canceling()) {
       goal_handle->canceled(result);
       RCLCPP_INFO(rclcpp::get_logger("server"), 
@@ -93,67 +94,70 @@ void execute(
       return;
     }
     
-    request_set_pen->r = r[0];
-    request_set_pen->g = g[0];
-    request_set_pen->b = b[0];
+    request_set_pen->r = r[i];
+    request_set_pen->g = g[i];
+    request_set_pen->b = b[i];
     request_set_pen->width = 5;
     request_set_pen->off = 1;
     
     result_set_pen = client_set_pen->async_send_request(request_set_pen);
-    
+
     request_teleport_absolute = std::make_shared<TeleportAbsolute::Request>();
-    request_teleport_absolute->x = 5.544445 + desplazamiento_x[0] * radius;
-    request_teleport_absolute->y = 5.544445 + desplazamiento_y[0] * radius;
+    request_teleport_absolute->x = 5.544445 + desplazamiento_x[i] * radius;
+    request_teleport_absolute->y = 5.544445 + desplazamiento_y[i] * radius;
     request_teleport_absolute->theta = 0;
 
     result_teleport_absolute = client_teleport_absolute->async_send_request(request_teleport_absolute);
 
-    r_number = 0;
+    r_number = i+1;
     ring_angle = 0;
     
     goal_handle->publish_feedback(feedback);
-    RCLCPP_INFO(rclcpp::get_logger("server"), 
-       "Publish Feedback");
-    
+    RCLCPP_INFO(rclcpp::get_logger("server"), "Publish Feedback");
+
     request_set_pen->off = 0;
     result_set_pen = client_set_pen->async_send_request(request_set_pen);
-    
-    j = 0;
-    while (rclcpp::ok() && (j <= iterations)) {
-        if (j == iterations/4) { 
-            ring_angle = 90;
-            goal_handle->publish_feedback(feedback);
-        RCLCPP_INFO(rclcpp::get_logger("server"), 
-        "Publish Feedback");
-        } 
-        
-        else if (j == iterations/2) {
-            ring_angle = 180;
-            goal_handle->publish_feedback(feedback);
-        RCLCPP_INFO(rclcpp::get_logger("server"), 
-        "Publish Feedback");
-        } 
-        
-        else if (j == 3*iterations/4) {
-            ring_angle = 270;
-            goal_handle->publish_feedback(feedback);
-        RCLCPP_INFO(rclcpp::get_logger("server"), 
-        "Publish Feedback");
-        }
-        
-        message.linear.x = v_linear;
-        message.angular.z = v_angular;
-        publisher->publish(message);
-        
-        j++;
-        loop_rate.sleep();
-    }
-    
-    message.linear.x = 0.0;
-    message.angular.z = 0.0;
-    publisher->publish(message);
-    loop_rate.sleep();
 
+		j = 0;
+		while (rclcpp::ok() && (j <= iterations)) {
+			if (j == iterations/4) {
+				ring_angle = 90;
+				goal_handle->publish_feedback(feedback);
+                RCLCPP_INFO(rclcpp::get_logger("server"), "Publish Feedback");
+			} 
+			
+			else if (j == iterations/2) { 
+				ring_angle = 180;
+				goal_handle->publish_feedback(feedback);
+                RCLCPP_INFO(rclcpp::get_logger("server"), "Publish Feedback");
+			} 
+			
+			else if (j == 3*iterations/4) {
+				ring_angle = 270;
+				goal_handle->publish_feedback(feedback);
+                RCLCPP_INFO(rclcpp::get_logger("server"), "Publish Feedback");
+			}
+			
+			message.linear.x = v_linear;
+			message.angular.z = v_angular;
+			publisher->publish(message);
+			
+			j++;
+			loop_rate.sleep();
+		}
+		
+		message.linear.x = 0.0;
+		message.angular.z = 0.0;
+		publisher->publish(message);
+		loop_rate.sleep();
+  }
+  
+  if (rclcpp::ok()) {
+    result->rings_completed = r_number;
+    goal_handle->succeed(result);
+    RCLCPP_INFO(rclcpp::get_logger("server"), 
+      "All five rings completed");
+  }
 }
 
 int main(int argc, char ** argv)
