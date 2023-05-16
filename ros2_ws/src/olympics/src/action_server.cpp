@@ -86,7 +86,7 @@ void execute(
   auto request_teleport_absolute = std::make_shared<TeleportAbsolute::Request>();
   auto result_teleport_absolute = client_teleport_absolute->async_send_request(request_teleport_absolute);
   
-  for (int i = 0; i < 1; i++) {
+  for (int i = 0; i < 5; i++) {
     if (goal_handle->is_canceling()) {
       goal_handle->canceled(result);
       RCLCPP_INFO(rclcpp::get_logger("server"), 
