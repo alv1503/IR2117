@@ -1,6 +1,0 @@
-[0.014s] Invoking command in '/home/alvaro/Documents/GitHub/IR2117/ros2_ws/build/examples_topics': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/ros2_ws/build/examples_topics -- -j8 -l8
-[0.020s] CMake Error: The current CMakeCache.txt directory /home/alvaro/Documents/GitHub/IR2117/ros2_ws/build/examples_topics/CMakeCache.txt is different than the directory /home/usuario/Documentos/GitHub/IR2117/ros2_ws/build/examples_topics where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
-[0.030s] CMake Error: The source directory "/home/usuario/Documentos/GitHub/IR2117/ros2_ws/src/examples/topics" does not exist.
-[0.030s] Specify --help for usage, or press the help button on the CMake GUI.
-[0.031s] make: *** [Makefile:310: cmake_check_build_system] Error 1
-[0.032s] Invoked command in '/home/alvaro/Documents/GitHub/IR2117/ros2_ws/build/examples_topics' returned '2': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/alvaro/Documents/GitHub/IR2117/ros2_ws/build/examples_topics -- -j8 -l8

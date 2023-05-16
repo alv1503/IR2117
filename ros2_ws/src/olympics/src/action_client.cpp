@@ -3,6 +3,8 @@
 #include "olympic_interfaces/action/rings.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
+#include <iomanip>
+#include <sstream>
 
 using Rings = 
   olympic_interfaces::action::Rings;
@@ -17,10 +19,12 @@ rclcpp::Node::SharedPtr g_node = nullptr;
 void feedback_callback(GoalHandleRings::SharedPtr,
   const std::shared_ptr<const Rings::Feedback> feedback)
 {
+  std::stringstream ss;
+  ss << std::setprecision(3) << "Circle n." << feedback->drawing_ring << " at "
+     << feedback->ring_angle << " degrees";
   RCLCPP_INFO(
     g_node->get_logger(),
-    "Next ring received: %" PRId32,
-    feedback->partial_sequence.back());
+    ss.str().c_str()); 
 }
 
 int main(int argc, char ** argv)

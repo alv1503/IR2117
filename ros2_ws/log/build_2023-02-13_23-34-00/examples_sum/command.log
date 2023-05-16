@@ -1,1 +1,0 @@
-Invoking command in '/home/alvaro/Documents/GitHub/IR2117/ros2_ws/build/examples_sum': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/alvaro/Documents/GitHub/IR2117/ros2_ws/src/examples/sum -DCMAKE_INSTALL_PREFIX=/home/alvaro/Documents/GitHub/IR2117/ros2_ws/install/examples_sum

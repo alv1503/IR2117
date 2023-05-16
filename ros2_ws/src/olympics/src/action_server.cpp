@@ -1,21 +1,32 @@
 #include <inttypes.h>
 #include <memory>
+#include <cmath>
 #include "olympic_interfaces/action/rings.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
+#include "geometry_msgs/msg/twist.hpp"
+#include "turtlesim/srv/set_pen.hpp"
+#include "turtlesim/srv/teleport_absolute.hpp"
+
+
+using namespace std::chrono_literals;
+using turtlesim::srv::SetPen;
+using turtlesim::srv::TeleportAbsolute;
 
 using Rings = 
   olympic_interfaces::action::Rings;
 
 using GoalHandleRings = 
   rclcpp_action::ServerGoalHandle<Rings>;
+  
+  rclcpp::Node::SharedPtr node = nullptr;
 
 rclcpp_action::GoalResponse handle_goal(
   const rclcpp_action::GoalUUID & uuid, 
   std::shared_ptr<const Rings::Goal> goal)
 {
   RCLCPP_INFO(rclcpp::get_logger("server"), 
-    "Got goal request with order %d", goal->radius);
+    "Got goal request for a circle with radius %.*f", 2, goal->radius);
   (void)uuid;
   return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
 }
@@ -40,38 +51,7 @@ void handle_accepted(
 void execute(
   const std::shared_ptr<GoalHandleRings> goal_handle)
 {
-  RCLCPP_INFO(rclcpp::get_logger("server"), 
-    "Executing goal");
-  rclcpp::Rate loop_rate(1);
-  const auto goal = goal_handle->get_goal();
-  auto feedback = std::make_shared<Rings::Feedback>();
-  auto & sequence = feedback->partial_sequence;
-  sequence.push_back(0);
-  sequence.push_back(1);
-  auto result = std::make_shared<Rings::Result>();
-  
-  for (int i = 1; (i < goal->order) && rclcpp::ok(); ++i) {
-    if (goal_handle->is_canceling()) {
-      result->sequence = sequence;
-      goal_handle->canceled(result);
-      RCLCPP_INFO(rclcpp::get_logger("server"), 
-        "Goal Canceled");
-      return;
-    }
-    
-    sequence.push_back(sequence[i] + sequence[i - 1]);
-    goal_handle->publish_feedback(feedback);
-    RCLCPP_INFO(rclcpp::get_logger("server"), 
-      "Publish Feedback");
-    loop_rate.sleep();
-  }
-  
-  if (rclcpp::ok()) {
-    result->sequence = sequence;
-    goal_handle->succeed(result);
-    RCLCPP_INFO(rclcpp::get_logger("server"), 
-      "Goal Succeeded");
-  }
+  continue
 }
 
 int main(int argc, char ** argv)
