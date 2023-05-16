@@ -26,18 +26,32 @@ find_package(rclcpp_components REQUIRED)
 find_package(olympic_interfaces REQUIRED)
 
 add_executable(action_server src/action_server.cpp)
+target_include_directories(action_server PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
 ament_target_dependencies(action_server
   rclcpp
   rclcpp_action
+  rclcpp_components
+  std_msgs
   geometry_msgs
   turtlesim
-  olympic_interfaces)
+  olympic_interfaces
+)
 
 add_executable(action_client src/action_client.cpp)
+target_include_directories(action_client PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
 ament_target_dependencies(action_client
   rclcpp
   rclcpp_action
-  olympic_interfaces)
+  rclcpp_components
+  std_msgs
+  geometry_msgs
+  turtlesim
+  olympic_interfaces
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
