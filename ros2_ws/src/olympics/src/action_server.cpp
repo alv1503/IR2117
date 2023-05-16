@@ -19,7 +19,7 @@ using Rings =
 using GoalHandleRings = 
   rclcpp_action::ServerGoalHandle<Rings>;
   
-  rclcpp::Node::SharedPtr node = nullptr;
+rclcpp::Node::SharedPtr node = nullptr;
 
 rclcpp_action::GoalResponse handle_goal(
   const rclcpp_action::GoalUUID & uuid, 
@@ -51,15 +51,117 @@ void handle_accepted(
 void execute(
   const std::shared_ptr<GoalHandleRings> goal_handle)
 {
-  continue
+  RCLCPP_INFO(rclcpp::get_logger("server"), 
+    "Executing goal");
+  
+  const auto goal = goal_handle->get_goal();
+  auto feedback = std::make_shared<Rings::Feedback>();
+  auto result = std::make_shared<Rings::Result>();
+  auto & r_number = feedback->drawing_ring;
+  auto & ring_angle = feedback->ring_angle;
+  
+  float radius = goal->radius;
+  auto publisher = node->create_publisher<geometry_msgs::msg::Twist>("/turtle1/cmd_vel", 10);
+  
+  geometry_msgs::msg::Twist message;
+  
+  float v_angular = 1.2, v_linear  = radius * v_angular;
+  int j, iterations = 2*M_PI / (v_angular * 0.1);
+  
+  rclcpp::WallRate loop_rate(100ms);
+  
+  int r[5] = {0, 0, 223, 244, 0};
+  int g[5] = {129, 0, 0, 195, 159};
+  int b[5] = {200, 0, 36, 0, 61};
+
+  double desplazamiento_x[5] = {-2.166667, 0, 2.166667, -1.166667, 1.166667};
+  double desplazamiento_y[5] = {0, 0, 0, -1, -1};
+
+  rclcpp::Client<SetPen>::SharedPtr client_set_pen = node->create_client<SetPen>("/turtle1/set_pen");
+  auto request_set_pen = std::make_shared<SetPen::Request>();
+  auto result_set_pen = client_set_pen->async_send_request(request_set_pen);
+
+
+  rclcpp::Client<TeleportAbsolute>::SharedPtr client_teleport_absolute = node->create_client<TeleportAbsolute>("/turtle1/teleport_absolute");
+  auto request_teleport_absolute = std::make_shared<TeleportAbsolute::Request>();
+  auto result_teleport_absolute = client_teleport_absolute->async_send_request(request_teleport_absolute);
+  
+    if (goal_handle->is_canceling()) {
+      goal_handle->canceled(result);
+      RCLCPP_INFO(rclcpp::get_logger("server"), 
+      "Goal Canceled");
+      return;
+    }
+    
+    request_set_pen->r = r[0];
+    request_set_pen->g = g[0];
+    request_set_pen->b = b[0];
+    request_set_pen->width = 5;
+    request_set_pen->off = 1;
+    
+    result_set_pen = client_set_pen->async_send_request(request_set_pen);
+    
+    request_teleport_absolute = std::make_shared<TeleportAbsolute::Request>();
+    request_teleport_absolute->x = 5.544445 + desplazamiento_x[0] * radius;
+    request_teleport_absolute->y = 5.544445 + desplazamiento_y[0] * radius;
+    request_teleport_absolute->theta = 0;
+
+    result_teleport_absolute = client_teleport_absolute->async_send_request(request_teleport_absolute);
+
+    r_number = 0;
+    ring_angle = 0;
+    
+    goal_handle->publish_feedback(feedback);
+    RCLCPP_INFO(rclcpp::get_logger("server"), 
+       "Publish Feedback");
+    
+    request_set_pen->off = 0;
+    result_set_pen = client_set_pen->async_send_request(request_set_pen);
+    
+    j = 0;
+    while (rclcpp::ok() && (j <= iterations)) {
+        if (j == iterations/4) { 
+            ring_angle = 90;
+            goal_handle->publish_feedback(feedback);
+        RCLCPP_INFO(rclcpp::get_logger("server"), 
+        "Publish Feedback");
+        } 
+        
+        else if (j == iterations/2) {
+            ring_angle = 180;
+            goal_handle->publish_feedback(feedback);
+        RCLCPP_INFO(rclcpp::get_logger("server"), 
+        "Publish Feedback");
+        } 
+        
+        else if (j == 3*iterations/4) {
+            ring_angle = 270;
+            goal_handle->publish_feedback(feedback);
+        RCLCPP_INFO(rclcpp::get_logger("server"), 
+        "Publish Feedback");
+        }
+        
+        message.linear.x = v_linear;
+        message.angular.z = v_angular;
+        publisher->publish(message);
+        
+        j++;
+        loop_rate.sleep();
+    }
+    
+    message.linear.x = 0.0;
+    message.angular.z = 0.0;
+    publisher->publish(message);
+    loop_rate.sleep();
+
 }
 
 int main(int argc, char ** argv)
 {
   rclcpp::init(argc, argv);
   auto node = rclcpp::Node::make_shared("olympics_action_server");
-  auto action_server = 
-    rclcpp_action::create_server<Rings>(node,
+  auto action_server = rclcpp_action::create_server<Rings>(
+      node,
       "olympics",
       handle_goal,
       handle_cancel,
