@@ -163,7 +163,7 @@ void execute(
 int main(int argc, char ** argv)
 {
   rclcpp::init(argc, argv);
-  auto node = rclcpp::Node::make_shared("olympics_action_server");
+  node = rclcpp::Node::make_shared("olympics_action_server");
   auto action_server = rclcpp_action::create_server<Rings>(
       node,
       "olympics",

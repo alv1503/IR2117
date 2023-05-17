@@ -33,7 +33,7 @@ int main(int argc, char ** argv)
   g_node = rclcpp::Node::make_shared("action_client");
   g_node->declare_parameter("radius", 1.0);  // Radius parameter
   double radius = g_node->get_parameter("radius").get_parameter_value().get<double>();
-  auto action_client = rclcpp_action::create_client<Rings>(g_node, "rings");
+  auto action_client = rclcpp_action::create_client<Rings>(g_node, "olympics");
   
   if (!action_client->wait_for_action_server(20s)) {
     RCLCPP_ERROR(g_node->get_logger(), 
