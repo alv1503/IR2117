@@ -79,12 +79,9 @@ void execute(
 
   rclcpp::Client<SetPen>::SharedPtr client_set_pen = node->create_client<SetPen>("/turtle1/set_pen");
   auto request_set_pen = std::make_shared<SetPen::Request>();
-  auto result_set_pen = client_set_pen->async_send_request(request_set_pen);
-
 
   rclcpp::Client<TeleportAbsolute>::SharedPtr client_teleport_absolute = node->create_client<TeleportAbsolute>("/turtle1/teleport_absolute");
   auto request_teleport_absolute = std::make_shared<TeleportAbsolute::Request>();
-  auto result_teleport_absolute = client_teleport_absolute->async_send_request(request_teleport_absolute);
   
   for (int i = 0; i < 5; i++) {
     if (goal_handle->is_canceling()) {
@@ -100,14 +97,14 @@ void execute(
     request_set_pen->width = 5;
     request_set_pen->off = 1;
     
-    result_set_pen = client_set_pen->async_send_request(request_set_pen);
+    auto result_set_pen = client_set_pen->async_send_request(request_set_pen);
 
     request_teleport_absolute = std::make_shared<TeleportAbsolute::Request>();
     request_teleport_absolute->x = 5.544445 + desplazamiento_x[i] * radius;
     request_teleport_absolute->y = 5.544445 + desplazamiento_y[i] * radius;
     request_teleport_absolute->theta = 0;
 
-    result_teleport_absolute = client_teleport_absolute->async_send_request(request_teleport_absolute);
+    auto result_teleport_absolute = client_teleport_absolute->async_send_request(request_teleport_absolute);
 
     r_number = i+1;
     ring_angle = 0;
